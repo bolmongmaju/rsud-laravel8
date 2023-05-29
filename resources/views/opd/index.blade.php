@@ -106,8 +106,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Berita</h2>
-          <p>Berita yang baru ditambahkan</p>
+          <h2>Kegiatan</h2>
+          <p>Kegiatan terbaru dari tim pengendali inflasi daerah (TPID)</p>
         </div>
 
         <div class="row">

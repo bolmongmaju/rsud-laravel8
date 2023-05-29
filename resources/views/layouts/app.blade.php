@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Dashboard &mdash; OPD</title>
+    <title>Dashboard &mdash; RSUD</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/bolmongkab.png') }}" type="image/x-icon">
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
@@ -59,10 +59,10 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="#">OPD</a>
+                        <a href="#">RSUD</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="#">OPD</a>
+                        <a href="#">RSUD</a>
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">MAIN MENU</li>
@@ -100,7 +100,7 @@
                             <li class="{{ setActive('admin/banner') }}"><a class="nav-link" href="{{ route('admin.banner.index') }}"><i class="fas fa-image"></i>
                         <span>Banner</span></a></li>
                         @endcan
-                        
+
                         @can('downloads.index')
                             <li class="{{ setActive('admin/download') }}"><a class="nav-link" href="{{ route('admin.download.index') }}"><i class="fas fa-file-image"></i>
                         <span>Files</span></a></li>
@@ -109,7 +109,7 @@
                         @if(auth()->user()->can('photos.index') || auth()->user()->can('videos.index'))
                         <li class="menu-header">GALERI</li>
                         @endif
-                        
+
                         @can('photos.index')
                             <li class="{{ setActive('admin/photo') }}"><a class="nav-link"
                         href="{{ route('admin.photo.index') }}"><i class="fas fa-image"></i>
@@ -124,7 +124,7 @@
                         @if(auth()->user()->can('roles.index') || auth()->user()->can('permission.index') || auth()->user()->can('users.index'))
                         <li class="menu-header">PENGATURAN</li>
                         @endif
-                        
+
                         @can('sliders.index')
                             <li class="{{ setActive('admin/slider') }}"><a class="nav-link" href="{{ route('admin.slider.index') }}"><i class="fas fa-laptop"></i>
                         <span>Sliders</span></a></li>
@@ -161,7 +161,7 @@
                                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i><span>Users
                                 Management</span></a>
                             @endif
-                            
+
                             <ul class="dropdown-menu">
                                 @can('roles.index')
                                     <li class="{{ setActive('admin/role') }}"><a class="nav-link" href="{{ route('admin.role.index') }}"><i class="fas fa-unlock"></i> Roles</a></li>

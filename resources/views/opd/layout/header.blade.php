@@ -17,7 +17,7 @@
           <li><a class="{{ (request()->is('daftar-pegawai')) ? 'active' : '' }}" href="{{ ('daftar-pegawai') }}">Daftar Pegawai</a></li>
         </ul>
       </li> --}}
-      <li><a href="{{ ('/berita') }}" class="{{ (request()->is('/berita')) ? 'active' : '' }}">Berita</a></li>
+      <li><a href="{{ ('/berita') }}" class="{{ (request()->is('/berita')) ? 'active' : '' }}">Kegiatan</a></li>
       <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-down"></i></a>
         <ul>
           <li><a class="{{ (request()->is('foto')) ? 'active' : '' }}" href="{{ ('foto') }}">Gambar</a></li>
