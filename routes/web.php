@@ -5,29 +5,57 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'index']);
-Route::get('/visi-misi', [App\Http\Controllers\PageController::class, 'visimisi']);
-Route::get('/program-dan-kegiatan', [App\Http\Controllers\PageController::class, 'program']);
-Route::get('/daftar-pegawai', [App\Http\Controllers\PageController::class, 'pegawai']);
-Route::get('/tupoksi', [App\Http\Controllers\PageController::class, 'tupoksi']);
-Route::get('/struktur', [App\Http\Controllers\PageController::class, 'struktur']);
-Route::get('/foto', [App\Http\Controllers\PageController::class, 'foto']);
-Route::get('/video', [App\Http\Controllers\PageController::class, 'video']);
-Route::get('/kontak', [App\Http\Controllers\PageController::class, 'kontak']);
-Route::get('/dasar-hukum', [App\Http\Controllers\PageController::class, 'dasarhukum']);
-Route::get('/event', [App\Http\Controllers\PageController::class, 'event']);
-Route::get('/event-detail/{events:id}', [App\Http\Controllers\PageController::class, 'eventDetail']);
-Route::get('/berita', [App\Http\Controllers\PageController::class, 'berita']);
-Route::get('/news/detail/{news:slug}', [App\Http\Controllers\PageController::class, 'beritaDetail'])->name('berita-detail');
-Route::get('/berita-cari', [App\Http\Controllers\Pagecontroller::class, 'hascarberita']);
 
-Route::get('/cari-kategori/{category:id}', [App\Http\Controllers\PageController::class, 'kategori'])->name('cari-kategori');
-Route::get('/cari-tag/{tag:id}', [App\Http\Controllers\PageController::class, 'tag'])->name('cari-tag');
+Route::prefix('profil')->group(function () {
+    Route::get('/sejarah', [App\Http\Controllers\PageController::class, 'sejarah'])->name('sejarah');
+    Route::get('/visi-misi', [App\Http\Controllers\PageController::class, 'visimisi'])->name('visimisi');
+    Route::get('/struktur-organisasi', [App\Http\Controllers\PageController::class, 'struktur_organisasi'])->name('struktur');
+    Route::get('/maklumat-pelayanan', [App\Http\Controllers\PageController::class, 'maklumat_pelayanan'])->name('maklumat');
+    Route::get('/dasar-hukum', [App\Http\Controllers\PageController::class, 'dasar_hukum'])->name('dasarhukum');
+    Route::get('/prestasi', [App\Http\Controllers\PageController::class, 'prestasi'])->name('prestasi');
+});
 
-Route::get('/download', [App\Http\Controllers\PageController::class, 'download']);
-Route::get('/getdownload/{downloads:id}', [App\Http\Controllers\PageController::class, 'getDownload'])->name('getdownload');
-Route::get('/event-detail/{event:id}', [App\Http\Controllers\PageController::class, 'eventDetail'])->name('event-detail');
+Route::prefix('layanan')->group(function () {
+    Route::get('/rawat-jalan', [App\Http\Controllers\PageController::class, 'rawat_jalan'])->name('rj');
+    Route::get('/rawat-inap', [App\Http\Controllers\PageController::class, 'rawat_inap'])->name('ri');
+    Route::get('/gawat-darurat', [App\Http\Controllers\PageController::class, 'gawat_darurat'])->name('gd');
+    Route::get('/pendaftaran-vaksin', [App\Http\Controllers\PageController::class, 'pendaftaran_vaksin'])->name('pv');
+    Route::get('/pengajuan-surat-keterangan-medis', [App\Http\Controllers\PageController::class, 'pengajuan_surat_keterangan_medis'])->name('pskm');
+    Route::get('/jam-pelayanan', [App\Http\Controllers\PageController::class, 'jam_pelayanan'])->name('jp');
+});
 
-Auth::routes(['register' => false]);
+Route::prefix('dokter')->group(function () {
+    Route::get('/daftar-dokter', [App\Http\Controllers\PageController::class, 'daftar_dokter'])->name('dokter');
+});
+
+Route::prefix('informasi')->group(function () {
+    Route::get('/berita', [App\Http\Controllers\PageController::class, 'berita'])->name('berita');
+    Route::get('/berita/{news:slug}', [App\Http\Controllers\PageController::class, 'berita_detail'])->name('berita-detail');
+    Route::get('/artikel-kesehatan', [App\Http\Controllers\PageController::class, 'artikel_kesehatan'])->name('artikel');
+});
+
+Route::prefix('media')->group(function () {
+    Route::get('/foto', [App\Http\Controllers\PageController::class, 'foto'])->name('foto');
+    Route::get('/video', [App\Http\Controllers\PageController::class, 'video'])->name('video');
+    Route::get('/dokumen', [App\Http\Controllers\PageController::class, 'dokumen'])->name('dokumen');
+});
+
+Route::get('/kontak', [App\Http\Controllers\PageController::class, 'kontak'])->name('kontak');
+
+// Route::get('/berita-cari', [App\Http\Controllers\Pagecontroller::class, 'hascarberita']);
+
+// Route::get('/cari-kategori/{category:id}', [App\Http\Controllers\PageController::class, 'kategori'])->name('cari-kategori');
+// Route::get('/cari-tag/{tag:id}', [App\Http\Controllers\PageController::class, 'tag'])->name('cari-tag');
+
+// Route::get('/download', [App\Http\Controllers\PageController::class, 'download']);
+// Route::get('/getdownload/{downloads:id}', [App\Http\Controllers\PageController::class, 'getDownload'])->name('getdownload');
+
+Auth::routes([
+    'register' => false,
+    'reset'    => false,  // for resetting passwords
+    'confirm'  => false, // for additional password confirmations
+    'verify'   => false, // for email verification
+]);
 
 Route::prefix('admin')->group(function () {
     Route::group(['middleware' => 'auth'], function () {

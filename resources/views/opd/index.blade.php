@@ -31,7 +31,7 @@
                 <p class="satu-baris">Kabupaten Bolaang Mongondow</p>
               </div>
           </div>
-  
+
           <div class="col-6" data-aos="fade-up" data-aos-delay="100">
             <div class="dua-layanan" style="background-color: rgb(36, 36, 36);">
               <h4><a style="color: #f1f8ff" href="https://news.bolmongkab.go.id">BERITA</a></h4>
@@ -39,7 +39,7 @@
             </div>
           </div>
           {{-- @endforelse --}}
-  
+
         </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
@@ -61,10 +61,10 @@
           <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
             {{-- <h1>Belum diisi</h1>
             <h2>Belum diisi</h2> --}}
-  
+
             <div>
             </div>
-  
+
           </div>
           <div class="col-lg-4 order-1 order-lg-2 hero-img rounded">
             {{-- <img src="{{$item->image}}" class="img-fluid" alt=""> --}}
