@@ -48,6 +48,40 @@ class PageController extends Controller
         ));
     }
 
+    public function sejarah()
+    {
+        $item = Profile::select('sejarah')->find(1);
+        return view('rsud.detail.sejarah', compact('item'));
+    }
+
+    public function visimisi()
+    {
+        $item = Profile::select('visi', 'misi')->find(1);
+        return view('rsud.detail.visimisi', compact('item'));
+    }
+
+    public function struktur_organisasi()
+    {
+        $item = Profile::select('struktur_organisasi')->find(1);
+        return view('rsud.detail.struktur', compact('item'));
+    }
+
+    public function dasar_hukum()
+    {
+        $item = Profile::select('dasar_hukum')->find(1);
+        return view('rsud.detail.dasar_hukum', compact('item'));
+    }
+
+    public function maklumat_pelayanan()
+    {
+        return view('rsud.detail.maklumat');
+    }
+
+    public function prestasi()
+    {
+        return view('rsud.detail.prestasi');
+    }
+
 
     // public function index()
     // {
