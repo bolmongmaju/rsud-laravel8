@@ -61,9 +61,9 @@
                         <li><a class="dropdown-item" href="{{ route('rj') }}">Pelayanan Rawat Jalan</a></li>
                         <li><a class="dropdown-item" href="{{ route('ri') }}">Pelayanan Rawat Inap</a></li>
                         <li><a class="dropdown-item" href="{{ route('gd') }}">Pelayanan Gawat Darurat</a></li>
-                        <li><a class="dropdown-item" href="{{ route('jp') }}">Jam Pelayanan</a></li>
-                        <li><a class="dropdown-item" href="{{ route('pv') }}">Pendaftaran Vaksin</a></li>
-                        <li><a class="dropdown-item" href="{{ route('pskm') }}">Pengajuan Surat Keterangan Medis</a></li>
+                        <li><a class="dropdown-item" href="#">Jam Pelayanan</a></li>
+                        <li><a class="dropdown-item" href="#">Pendaftaran Vaksin</a></li>
+                        <li><a class="dropdown-item" href="#">Pengajuan Surat Keterangan Medis</a></li>
                     </ul>
                 </li>
 
@@ -71,7 +71,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Dokter <i class="icofont-thin-down"></i></a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                        <li><a class="dropdown-item" href="{{ route('dokter') }}">Daftar Dokter</a></li>
+                        <li><a class="dropdown-item" href="#">Daftar Dokter</a></li>
                         <li><a class="dropdown-item" href="#">Spesialis</a></li>
                         <li><a class="dropdown-item" href="#">Klinik</a></li>
                         <li><a class="dropdown-item" href="#">Jadwal Poliklinik</a></li>

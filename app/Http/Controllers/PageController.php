@@ -82,6 +82,31 @@ class PageController extends Controller
         return view('rsud.detail.prestasi');
     }
 
+    public function rawat_jalan()
+    {
+        return view('rsud.detail.rawat_jalan');
+    }
+
+    public function rawat_inap()
+    {
+        return view('rsud.detail.rawat_inap');
+    }
+
+    public function gawat_darurat()
+    {
+        return view('rsud.detail.gawat_darurat');
+    }
+
+    public function berita()
+    {
+        $category = Category::latest()->get();
+        $tags = Tag::latest()->get();
+        $news = News::with('user')->latest()->paginate(5);
+        $news_new = News::take(3)->latest()->get();
+
+        return view('rsud.detail.berita', compact('news', 'category', 'tags', 'news_new'));
+    }
+
 
     // public function index()
     // {

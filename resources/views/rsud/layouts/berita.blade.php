@@ -16,7 +16,7 @@
                 <img src="{{ $item->image }}" alt="{{ $item->slug }}" class="img-fluid w-100">
                 <div class="content">
                     <h4 class="mt-4 mb-2 title-color">{{ $item->title }}</h4>
-                    <p><i class="icofont-user"></i> {{ $item->user->name }} <i class="icofont-clock-time ml-3"></i> {{ \Carbon\Carbon::parse($item->created_at)->diffForhumans() }}</p>
+                    <p><i class="icofont-user"></i> {{ $item->user->name }} <i class="icofont-calendar ml-3"></i> {{ \Carbon\Carbon::parse($item->created_at)->diffForhumans() }}</p>
                     <p class="mb-4">{{ Str::limit(strip_tags($item->body), 100) }}</p>
                     <a href="{{ route('berita-detail', $item->slug) }}" class="read-more">Selengkapnya  <i class="icofont-simple-right ml-2"></i></a>
                 </div>
