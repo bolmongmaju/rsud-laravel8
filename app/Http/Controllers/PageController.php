@@ -118,6 +118,12 @@ class PageController extends Controller
         return view('rsud.detail.berita_detail', compact('news', 'category', 'tags', 'news_new'));
     }
 
+    public function kontak()
+    {
+        $kontak = Contact::latest()->find(1);
+        return view('rsud.detail.kontak', compact('kontak'));
+    }
+
 
     // public function index()
     // {
