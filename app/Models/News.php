@@ -64,6 +64,6 @@ class News extends Model implements Viewable
      */
     public function getCreatedAtAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y');
+        return Carbon::parse($date)->format('d M Y');
     }
 }

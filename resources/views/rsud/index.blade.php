@@ -68,14 +68,14 @@
 <section class="section about">
 	@include('rsud.layouts.about')
 </section>
-{{-- <section class="cta-section ">
-	@include('rsud.layouts.data')
-</section> --}}
 <section class="section service gray-bg">
 	@include('rsud.layouts.service')
 </section>
 <section class="section appoinment">
 	@include('rsud.layouts.berita')
+</section>
+<section class="cta-section ">
+	@include('rsud.layouts.data')
 </section>
 {{-- <section class="section testimonial-2 gray-bg">
 	@include('rsud.layouts.artikel')

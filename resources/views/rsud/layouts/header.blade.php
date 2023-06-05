@@ -83,7 +83,7 @@
                         aria-haspopup="true" aria-expanded="false">Informasi <i class="icofont-thin-down"></i></a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown05">
                         <li><a class="dropdown-item" href="{{ route('berita') }}">Berita</a></li>
-                        <li><a class="dropdown-item" href="{{ route('artikel') }}">Artikel Kesehatan</a></li>
+                        <li><a class="dropdown-item" href="#">Artikel Kesehatan</a></li>
                         <li><a class="dropdown-item" href="#">Tarif Pelayanan Kesehatan</a></li>
                         <li><a class="dropdown-item" href="#">IKM</a></li>
                     </ul>
@@ -93,9 +93,9 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Media <i class="icofont-thin-down"></i></a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown06">
-                        <li><a class="dropdown-item" href="{{ route('foto') }}">Foto</a></li>
-                        <li><a class="dropdown-item" href="{{ route('video') }}">Video</a></li>
-                        <li><a class="dropdown-item" href="{{ route('dokumen') }}">Dokumen</a></li>
+                        <li><a class="dropdown-item" href="#">Foto</a></li>
+                        <li><a class="dropdown-item" href="#">Video</a></li>
+                        <li><a class="dropdown-item" href="#">Dokumen</a></li>
                     </ul>
                 </li>
 

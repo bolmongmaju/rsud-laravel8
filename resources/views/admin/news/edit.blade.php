@@ -29,7 +29,7 @@
                             </div>
                             @enderror
                         </div>
-                        
+
                         <div class="form-group">
                             <label>GAMBAR</label>
                             <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">

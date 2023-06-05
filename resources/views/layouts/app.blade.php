@@ -86,40 +86,41 @@
                         </li>
                         @endcan
 
-                        @can('events.index')
+                        {{-- @can('events.index')
                             <li class="{{ setActive('admin/event') }}"><a class="nav-link" href="{{ route('admin.event.index') }}"><i class="fas fa-bell"></i>
                         <span>Agenda</span></a></li>
-                        @endcan
+                        @endcan --}}
 
                         @can('services.index')
                             <li class="{{ setActive('admin/service') }}"><a class="nav-link" href="{{ route('admin.service.index') }}"><i class="fas fa-concierge-bell"></i>
                         <span>Layanan</span></a></li>
                         @endcan
 
-                        @can('banners.index')
+                        {{-- @can('banners.index')
                             <li class="{{ setActive('admin/banner') }}"><a class="nav-link" href="{{ route('admin.banner.index') }}"><i class="fas fa-image"></i>
                         <span>Banner</span></a></li>
-                        @endcan
+                        @endcan --}}
 
-                        @can('downloads.index')
-                            <li class="{{ setActive('admin/download') }}"><a class="nav-link" href="{{ route('admin.download.index') }}"><i class="fas fa-file-image"></i>
-                        <span>Files</span></a></li>
-                        @endcan
 
-                        @if(auth()->user()->can('photos.index') || auth()->user()->can('videos.index'))
-                        <li class="menu-header">GALERI</li>
+                        @if(auth()->user()->can('photos.index') || auth()->user()->can('videos.index') || auth()->user()->can('downloads.index'))
+                        <li class="menu-header">MEDIA</li>
                         @endif
 
                         @can('photos.index')
-                            <li class="{{ setActive('admin/photo') }}"><a class="nav-link"
-                        href="{{ route('admin.photo.index') }}"><i class="fas fa-image"></i>
-                        <span>Foto</span></a></li>
-                        @endcan
+                        <li class="{{ setActive('admin/photo') }}"><a class="nav-link"
+                            href="{{ route('admin.photo.index') }}"><i class="fas fa-image"></i>
+                            <span>Foto</span></a></li>
+                            @endcan
 
-                        @can('videos.index')
+                            @can('videos.index')
                             <li class="{{ setActive('admin/video') }}"><a class="nav-link" href="{{ route('admin.video.index') }}"><i class="fas fa-video"></i>
-                        <span>Video</span></a></li>
-                        @endcan
+                                <span>Video</span></a></li>
+                            @endcan
+
+                            @can('downloads.index')
+                                <li class="{{ setActive('admin/download') }}"><a class="nav-link" href="{{ route('admin.download.index') }}"><i class="fas fa-file-image"></i>
+                            <span>Dokumen</span></a></li>
+                            @endcan
 
                         @if(auth()->user()->can('roles.index') || auth()->user()->can('permission.index') || auth()->user()->can('users.index'))
                         <li class="menu-header">PENGATURAN</li>
@@ -142,7 +143,7 @@
 
                         @can('contact.index')
                         <li class="{{ setActive('admin/contact') }}"><a class="nav-link" href="{{ route('admin.contact.index') }}"><i class="fas fa-phone"></i>
-                        <span>Contact</span></a></li>
+                        <span>Kontak</span></a></li>
                         @endcan
 
                         @can('link.index')

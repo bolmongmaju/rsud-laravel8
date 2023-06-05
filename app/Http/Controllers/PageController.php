@@ -37,6 +37,7 @@ class PageController extends Controller
         $links = Link::latest()->get();
         $sosmeds = Sosmed::get();
         $news = News::take(6)->latest()->get();
+        // $infografis = Http::get('http://bolmongkab.go.id/api/infografis')['data']['data'];
 
         return view('rsud.index', compact(
             'contact',
@@ -44,7 +45,7 @@ class PageController extends Controller
             'sliders',
             'links',
             'sosmeds',
-            'news'
+            'news',
         ));
     }
 
@@ -105,6 +106,16 @@ class PageController extends Controller
         $news_new = News::take(3)->latest()->get();
 
         return view('rsud.detail.berita', compact('news', 'category', 'tags', 'news_new'));
+    }
+
+    public function berita_detail($slug)
+    {
+        $category = Category::latest()->get();
+        $tags = Tag::latest()->get();
+        $news = News::where('slug', $slug)->firstOrFail();
+        $news_new = News::take(3)->latest()->get();
+
+        return view('rsud.detail.berita_detail', compact('news', 'category', 'tags', 'news_new'));
     }
 
 
