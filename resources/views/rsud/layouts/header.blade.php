@@ -3,15 +3,15 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <ul class="top-bar-info list-inline-item pl-0 mb-0">
-                    <li class="list-inline-item"><a href="mailto:support@gmail.com"><i class="icofont-support-faq mr-2"></i>{{ $contact->email }}</a></li>
-                    <li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>{{ $contact->alamat }} </li>
+                    <li class="list-inline-item"><a href="mailto:support@gmail.com"><i class="icofont-support-faq mr-2"></i>{{ $contact->email ?? null }}</a></li>
+                    <li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>{{ $contact->alamat ?? null }} </li>
                 </ul>
             </div>
             <div class="col-lg-6">
                 <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
                     <a href="tel:+23-345-67890">
                         <span>Telp/WA : </span>
-                        <span class="h4">{{ $contact->no_telp }}</span>
+                        <span class="h4">{{ $contact->no_telp ?? null }}</span>
                     </a>
                 </div>
             </div>
@@ -21,7 +21,7 @@
 <nav class="navbar navbar-expand-lg navigation" id="navbar">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="{{ Storage::url($profil->logo) }}" width="250" alt="logo-bolmong" class="img-fluid">
+            <img src="{{ Storage::url($profil->logo ?? null) }}" width="250" alt="logo-bolmong" class="img-fluid">
         </a>
 
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"

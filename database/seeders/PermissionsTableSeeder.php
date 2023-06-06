@@ -32,12 +32,6 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'categories.edit']);
         Permission::create(['name' => 'categories.delete']);
 
-        //permission for events
-        Permission::create(['name' => 'events.index']);
-        Permission::create(['name' => 'events.create']);
-        Permission::create(['name' => 'events.edit']);
-        Permission::create(['name' => 'events.delete']);
-
         //permission for photos
         Permission::create(['name' => 'photos.index']);
         Permission::create(['name' => 'photos.create']);
@@ -55,12 +49,6 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'files.edit']);
         Permission::create(['name' => 'files.delete']);
 
-        //permission for banners
-        Permission::create(['name' => 'banners.index']);
-        Permission::create(['name' => 'banners.create']);
-        Permission::create(['name' => 'banners.edit']);
-        Permission::create(['name' => 'banners.delete']);
-
         //permission for services
         Permission::create(['name' => 'services.index']);
         Permission::create(['name' => 'services.create']);
@@ -71,11 +59,6 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'sliders.index']);
         Permission::create(['name' => 'sliders.create']);
         Permission::create(['name' => 'sliders.delete']);
-
-        //permission for infografis
-        Permission::create(['name' => 'infografis.index']);
-        Permission::create(['name' => 'infografis.create']);
-        Permission::create(['name' => 'infografis.delete']);
 
         //permission for roles
         Permission::create(['name' => 'roles.index']);
@@ -121,16 +104,10 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'downloads.edit']);
         Permission::create(['name' => 'downloads.delete']);
 
-        //permission for download
+        //permission for profil pegawai
         Permission::create(['name' => 'profpegs.index']);
         Permission::create(['name' => 'profpegs.create']);
         Permission::create(['name' => 'profpegs.edit']);
         Permission::create(['name' => 'profpegs.delete']);
-
-        //permission for visitor
-        // Permission::create(['name' => 'visitor.index']);
-        // Permission::create(['name' => 'visitor.create']);
-        // Permission::create(['name' => 'visitor.edit']);
-        // Permission::create(['name' => 'visitor.delete']);
     }
 }

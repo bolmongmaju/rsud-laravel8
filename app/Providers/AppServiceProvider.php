@@ -29,18 +29,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $kontak = Contact::latest()->get();
-        $profil = Profile::select('nama_opd', 'short_name', 'kata_sambutan', 'foto_pimpinan', 'logo', 'favicon', 'maklumat')->find(1);
-        $links = Link::latest()->get();
-        $services = Service::latest()->get();
-        $contact = Contact::find(1);
-        $sosmeds = Sosmed::get();
+        // $kontak = Contact::latest()->firstOrFail();
+        // $profil = Profile::select('nama_opd', 'short_name', 'kata_sambutan', 'foto_pimpinan', 'logo', 'favicon', 'maklumat')->find(1);
+        // $links = Link::latest()->get();
+        // $services = Service::latest()->get();
+        // $contact = Contact::find(1);
+        // $sosmeds = Sosmed::get();
 
-        View()->share('links', $links);
-        View()->share('services', $services);
-        View()->share('contact', $contact);
-        View()->share('sosmeds', $sosmeds);
-        View()->share('profil', $profil);
-        View()->share('kontak', $kontak);
+        // View()->share('links', $links);
+        // View()->share('services', $services);
+        // View()->share('contact', $contact);
+        // View()->share('sosmeds', $sosmeds);
+        // View()->share('profil', $profil);
+        // View()->share('kontak', $kontak);
     }
 }

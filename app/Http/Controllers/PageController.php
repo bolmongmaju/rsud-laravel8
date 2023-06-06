@@ -125,82 +125,6 @@ class PageController extends Controller
     }
 
 
-    // public function index()
-    // {
-    //     $postssatu = News::with('tags')->take(1)->latest()->get();
-    //     $posts = News::with('tags')->take(4)->latest()->get();
-    //     $events = Event::take(4)->latest()->get();
-    //     $sliders = Slider::take(1)->latest()->get();
-    //     $links = Link::latest()->get();
-    //     $services = Service::latest()->get();
-    //     $contact = Contact::find(1);
-    //     $sosmeds = Sosmed::get();
-
-    //     $profil = Profile::select('nama_opd', 'short_name', 'kata_sambutan', 'foto_pimpinan', 'logo', 'favicon', 'maklumat')->find(1);
-
-    //     // $infografis = Http::get('http://bolmongkab.go.id/api/infografis')['data']['data'];
-
-    //     return view('opd.index', compact(
-    //         'posts',
-    //         'events',
-    //         'sliders',
-    //         'services',
-    //         'postssatu',
-    //         // 'infografis',
-    //         'links',
-    //         'contact',
-    //         'sosmeds',
-    //         'profil'
-    //     ));
-    // }
-
-    // public function program()
-    // {
-    //     $program = Profile::take(1)->latest()->get();
-    //     return view('opd/detail/program', compact('program'));
-    // }
-
-    // public function pegawai()
-    // {
-    //     $pegawai = Profpeg::latest()->get();
-    //     return view('opd/detail/pegawai', compact('pegawai'));
-    // }
-
-    // public function tupoksi()
-    // {
-    //     $tupoksi = Profile::take(1)->latest()->get();
-    //     return view('opd/detail/tupoksi', compact('tupoksi'));
-    // }
-
-    // public function visimisi()
-    // {
-    //     $visimisi = Profile::take(1)->latest()->get();
-    //     return view('opd/detail/visimisi', compact('visimisi'));
-    // }
-
-    // public function foto()
-    // {
-    //     $foto = Photo::latest()->paginate(12);
-    //     return view('opd/detail/foto', compact('foto'));
-    // }
-    // public function video()
-    // {
-    //     $video = Video::latest()->paginate(12);
-    //     return view('opd/detail/video', compact('video'));
-    // }
-
-    // public function struktur()
-    // {
-    //     $struktur = Profile::take(1)->latest()->get();
-    //     return view('opd/detail/struktur', compact('struktur'));
-    // }
-
-    // public function dasarhukum()
-    // {
-    //     $dasarhukum = Profile::take(1)->latest()->get();
-    //     return view('opd/detail/dasarhukum', compact('dasarhukum'));
-    // }
-
     // public function download()
     // {
     //     $downloads = Download::latest()->paginate(5);
@@ -212,61 +136,6 @@ class PageController extends Controller
     //     $entry = Download::where('id', '=', $id)->firstOrFail();
     //     $pathToFile = storage_path() . "/app/public/" . $entry->file;
     //     return response()->download($pathToFile);
-    // }
-
-    // public function berita(Request $request)
-    // {
-    //     $kategori = Category::latest()->get();
-    //     $posts = News::latest()->Paginate(5);
-    //     $sidebar = News::skip(5)->Paginate(5);
-    //     $tags = Tag::get();
-
-    //     return view('opd/detail/berita', compact('posts', 'kategori', 'sidebar', 'tags'));
-    // }
-
-    // public function beritaDetail(Request $request, $slug)
-    // {
-    //     if ($request->has('cari')) {
-    //         $kategori = Category::latest()->get();
-    //         $tags = Tag::latest()->get();
-    //         $sidebar = News::skip(5)->Paginate(5);
-    //         $posts = News::where('title', 'LIKE', '%' . $request->cari . '%')->with('kategori')->get();
-
-    //         // $expiresAt = now()->addHours(3);
-    //         views($slug)
-    //             // ->cooldown($expiresAt)
-    //             ->record();
-
-    //         return view('opd.detail.berita', compact('posts', 'kategori', 'sidebar', 'tags'));
-    //     } else {
-    //         $kategori = Category::latest()->simplePaginate(5);
-    //         $posts = News::where('slug', $slug)->firstOrFail();
-    //         $tags = Tag::latest()->get();
-    //         $sidebar = News::skip(5)->Paginate(5);
-
-    //         // $expiresAt = now()->addHours(3);
-    //         views($posts)
-    //             // ->cooldown($expiresAt)
-    //             ->record();
-
-    //         return view('opd.detail.berita-detail', compact('posts', 'sidebar', 'kategori', 'tags'));
-    //     }
-    // }
-
-    // public function hascarberita(Request $request)
-    // {
-    //     if ($request->has('cari')) {
-    //         $kategori = Category::latest()->get();
-    //         $tags = Tag::latest()->get();
-    //         $sidebar = News::skip(5)->Paginate(5);
-    //         $posts = News::where('title', 'LIKE', '%' . $request->cari . '%')->get();
-    //     } else {
-    //         $kategori = Category::latest()->simplePaginate(5);
-    //         $posts = News::where('id', $id)->firstOrFail();
-    //         $tags = Tag::latest()->get();
-    //         $sidebar = News::skip(5)->Paginate(5);
-    //     }
-    //     return view('opd/detail/hascarberita', compact('posts', 'kategori', 'sidebar', 'tags'));
     // }
 
 
@@ -292,9 +161,4 @@ class PageController extends Controller
     //     return view('opd/detail/berita', compact('posts', 'kategori', 'sidebar', 'tags'));
     // }
 
-    // public function eventDetail(Event $events)
-    // {
-
-    //     return view('opd/detail/agenda-detail', compact('events'));
-    // }
 }
