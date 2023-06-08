@@ -31,8 +31,8 @@ class PageController extends Controller
 
     public function index()
     {
-        $contact = Contact::find(1);
-        $profil = Profile::select('nama_opd', 'short_name', 'logo', 'favicon', 'kata_sambutan', 'maklumat', 'foto_pimpinan')->find(1);
+        $contact = Contact::firstOrFail();
+        $profil = Profile::select('nama_opd', 'short_name', 'logo', 'favicon', 'kata_sambutan', 'foto_pimpinan')->firstOrFail();
         $sliders = Slider::take(2)->latest()->get();
         $links = Link::latest()->get();
         $sosmeds = Sosmed::get();
@@ -51,26 +51,42 @@ class PageController extends Controller
 
     public function sejarah()
     {
-        $item = Profile::select('sejarah')->find(1);
-        return view('rsud.detail.sejarah', compact('item'));
+        $item = Profile::select('sejarah')->firstOrFail();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.sejarah', compact('item', 'contact', 'profil', 'sosmeds', 'links'));
     }
 
     public function visimisi()
     {
-        $item = Profile::select('visi', 'misi')->find(1);
-        return view('rsud.detail.visimisi', compact('item'));
+        $item = Profile::select('visi', 'misi')->firstOrFail();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.visimisi', compact('item', 'sosmeds', 'links', 'profil', 'contact'));
     }
 
     public function struktur_organisasi()
     {
-        $item = Profile::select('struktur_organisasi')->find(1);
-        return view('rsud.detail.struktur', compact('item'));
+        $item = Profile::select('struktur_organisasi')->firstOrFail();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.struktur', compact('item', 'contact', 'profil', 'sosmeds', 'links'));
     }
 
     public function dasar_hukum()
     {
-        $item = Profile::select('dasar_hukum')->find(1);
-        return view('rsud.detail.dasar_hukum', compact('item'));
+        $item = Profile::select('dasar_hukum')->firstOrFail();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.dasar_hukum', compact('item', 'contact', 'profil', 'sosmeds', 'links'));
     }
 
     public function maklumat_pelayanan()
@@ -104,8 +120,12 @@ class PageController extends Controller
         $tags = Tag::latest()->get();
         $news = News::with('user')->latest()->paginate(5);
         $news_new = News::take(3)->latest()->get();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
 
-        return view('rsud.detail.berita', compact('news', 'category', 'tags', 'news_new'));
+        return view('rsud.detail.berita', compact('news', 'category', 'tags', 'news_new', 'contact', 'profil', 'sosmeds', 'links'));
     }
 
     public function berita_detail($slug)
@@ -114,14 +134,23 @@ class PageController extends Controller
         $tags = Tag::latest()->get();
         $news = News::where('slug', $slug)->firstOrFail();
         $news_new = News::take(3)->latest()->get();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
 
-        return view('rsud.detail.berita_detail', compact('news', 'category', 'tags', 'news_new'));
+        return view('rsud.detail.berita_detail', compact('news', 'category', 'tags', 'news_new', 'contact', 'profil', 'sosmeds', 'links'));
     }
 
     public function kontak()
     {
-        $kontak = Contact::latest()->find(1);
-        return view('rsud.detail.kontak', compact('kontak'));
+        $kontak = Contact::latest()->first();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+
+        return view('rsud.detail.kontak', compact('kontak', 'contact', 'profil', 'sosmeds', 'links'));
     }
 
 

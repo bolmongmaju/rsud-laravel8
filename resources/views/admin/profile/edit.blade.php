@@ -44,7 +44,7 @@
                             </div>
                             @enderror
                         </div>
-                        
+
                         <div class="form-group">
                             <label>LOGO</label>
                             <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror">
@@ -191,6 +191,21 @@
 
                             @if(Storage::disk('public')->exists($profile->foto_pimpinan ?? null))
                                 <img src="{{ Storage::url($profile->foto_pimpinan ?? null) }}" width="200px" />
+                            @endif
+                        </div>
+
+                        <div class="form-group">
+                            <label>MAKLUMAT PELAYANAN (Opsional)</label>
+                            <input type="file" name="maklumat" class="form-control @error('maklumat') is-invalid @enderror">
+
+                            @error('maklumat')
+                            <div class="invalid-feedback" style="display: block">
+                                {{ $message }}
+                            </div>
+                            @enderror
+
+                            @if(Storage::disk('public')->exists($profile->maklumat ?? null))
+                                <img src="{{ Storage::url($profile->maklumat ?? null) }}" width="200px" />
                             @endif
                         </div>
 
