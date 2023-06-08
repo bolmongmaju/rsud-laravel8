@@ -31,8 +31,8 @@ class PageController extends Controller
 
     public function index()
     {
-        $contact = Contact::firstOrFail();
-        $profil = Profile::select('nama_opd', 'short_name', 'logo', 'favicon', 'kata_sambutan', 'foto_pimpinan')->firstOrFail();
+        $contact = Contact::first();
+        $profil = Profile::select('nama_opd', 'short_name', 'logo', 'favicon', 'kata_sambutan', 'foto_pimpinan')->first();
         $sliders = Slider::take(2)->latest()->get();
         $links = Link::latest()->get();
         $sosmeds = Sosmed::get();
@@ -91,27 +91,47 @@ class PageController extends Controller
 
     public function maklumat_pelayanan()
     {
-        return view('rsud.detail.maklumat');
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.maklumat', compact('sosmeds', 'links', 'profil', 'contact'));
     }
 
     public function prestasi()
     {
-        return view('rsud.detail.prestasi');
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.prestasi', compact('sosmeds', 'links', 'profil', 'contact'));
     }
 
     public function rawat_jalan()
     {
-        return view('rsud.detail.rawat_jalan');
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.rawat_jalan', compact('sosmeds', 'links', 'profil', 'contact'));
     }
 
     public function rawat_inap()
     {
-        return view('rsud.detail.rawat_inap');
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.rawat_inap', compact('sosmeds', 'links', 'profil', 'contact'));
     }
 
     public function gawat_darurat()
     {
-        return view('rsud.detail.gawat_darurat');
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.gawat_darurat', compact('sosmeds', 'links', 'profil', 'contact'));
     }
 
     public function berita()
