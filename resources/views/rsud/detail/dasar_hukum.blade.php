@@ -6,7 +6,7 @@
         <div class="department-content mt-3">
             <h3 class="text-md">Dasar Hukum</h3>
             <div class="divider my-4"></div>
-            <p>{{ $item->dasar_hukum }}</p>
+            <p>{!! strip_tags($item->dasar_hukum ?? null) !!}</p>
         </div>
     </div>
 </div>

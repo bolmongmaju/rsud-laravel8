@@ -77,6 +77,9 @@
 <section class="cta-section ">
 	@include('rsud.layouts.data')
 </section>
+<section class="section service gray-bg mt-5">
+	@include('rsud.layouts.faq')
+</section>
 {{-- <section class="section testimonial-2 gray-bg">
 	@include('rsud.layouts.artikel')
 </section> --}}

@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
+use App\Models\Faq;
 use App\Models\Infografis;
 use App\Models\Link;
 use App\Models\News;
@@ -37,6 +38,8 @@ class PageController extends Controller
         $links = Link::latest()->get();
         $sosmeds = Sosmed::get();
         $news = News::take(6)->latest()->get();
+        $faq = Faq::get();
+        $faq_show_default = Faq::first();
         // $infografis = Http::get('http://bolmongkab.go.id/api/infografis')['data']['data'];
 
         return view('rsud.index', compact(
@@ -46,12 +49,14 @@ class PageController extends Controller
             'links',
             'sosmeds',
             'news',
+            'faq',
+            'faq_show_default'
         ));
     }
 
     public function sejarah()
     {
-        $item = Profile::select('sejarah')->firstOrFail();
+        $item = Profile::select('sejarah')->first();
         $contact = Contact::first();
         $profil = Profile::select('logo', 'favicon')->first();
         $sosmeds = Sosmed::get();
@@ -61,7 +66,7 @@ class PageController extends Controller
 
     public function visimisi()
     {
-        $item = Profile::select('visi', 'misi')->firstOrFail();
+        $item = Profile::select('visi', 'misi')->first();
         $contact = Contact::first();
         $profil = Profile::select('logo', 'favicon')->first();
         $sosmeds = Sosmed::get();
@@ -71,7 +76,7 @@ class PageController extends Controller
 
     public function struktur_organisasi()
     {
-        $item = Profile::select('struktur_organisasi')->firstOrFail();
+        $item = Profile::select('struktur_organisasi')->first();
         $contact = Contact::first();
         $profil = Profile::select('logo', 'favicon')->first();
         $sosmeds = Sosmed::get();
@@ -81,7 +86,7 @@ class PageController extends Controller
 
     public function dasar_hukum()
     {
-        $item = Profile::select('dasar_hukum')->firstOrFail();
+        $item = Profile::select('dasar_hukum')->first();
         $contact = Contact::first();
         $profil = Profile::select('logo', 'favicon')->first();
         $sosmeds = Sosmed::get();
@@ -91,11 +96,12 @@ class PageController extends Controller
 
     public function maklumat_pelayanan()
     {
+        $item = Profile::select('maklumat')->first();
         $contact = Contact::first();
         $profil = Profile::select('logo', 'favicon')->first();
         $sosmeds = Sosmed::get();
         $links = Link::latest()->get();
-        return view('rsud.detail.maklumat', compact('sosmeds', 'links', 'profil', 'contact'));
+        return view('rsud.detail.maklumat', compact('item', 'sosmeds', 'links', 'profil', 'contact'));
     }
 
     public function prestasi()

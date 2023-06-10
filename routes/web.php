@@ -61,6 +61,7 @@ Route::prefix('media')->group(function () {
 
 Route::get('/kontak', [PageController::class, 'kontak'])->name('kontak');
 
+
 // Route::get('/berita-cari', [App\Http\Controllers\Pagecontroller::class, 'hascarberita']);
 
 // Route::get('/cari-kategori/{category:id}', [App\Http\Controllers\PageController::class, 'kategori'])->name('cari-kategori');
