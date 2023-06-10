@@ -101,10 +101,10 @@ class ProfileController extends Controller
 
         if ($profile) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.profile.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('profile.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.profile.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('profile.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -183,10 +183,10 @@ class ProfileController extends Controller
 
         if ($profile) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.profile.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('profile.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.profile.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('profile.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 }

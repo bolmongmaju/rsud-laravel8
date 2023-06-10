@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('admin.sosmed.update', $sosmed->id) }}" method="POST">
+                        <form action="{{ route('sosmed.update', $sosmed->id) }}" method="POST">
                             @csrf
                             @method('PUT')
 

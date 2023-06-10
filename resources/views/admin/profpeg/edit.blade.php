@@ -16,7 +16,7 @@
 
                 <div class="card-body">
 
-                    <form action="{{ route('admin.profpeg.update',$profpeg->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('profpeg.update',$profpeg->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -46,7 +46,7 @@
                             <button type="submit" class="btn btn-primary"
                                 onClick="return confirm('Ubah Data ?')">Submit</button>
 
-                            <a class="btn btn-light" href="{{ route('admin.profpeg.index') }}">Cancel</a>
+                            <a class="btn btn-light" href="{{ route('profpeg.index') }}">Cancel</a>
                         </div>
 
                     </form>

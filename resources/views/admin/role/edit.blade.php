@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.role.update', $role->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('role.update', $role->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
@@ -32,7 +32,7 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">PERMISSIONS</label>
-                            
+
                             @foreach ($permissions as $permission)
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" name="permissions[]" value="{{ $permission->name }}" id="check-{{ $permission->id }}" @if($role->permissions->contains($permission)) checked @endif>

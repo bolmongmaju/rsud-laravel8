@@ -15,12 +15,12 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.link.index') }}" method="GET">
+                    <form action="{{ route('link.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 @can('link.create')
                                     <div class="input-group-prepend">
-                                        <a href="{{ route('admin.link.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                                        <a href="{{ route('link.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
                                 @endcan
                                 <input type="text" class="form-control" name="q"
@@ -50,15 +50,15 @@
                                     <td><a href="{{ $link->url }}">{{ $link->url }}</a></td>
                                     <td class="text-center">
                                         @can('link.edit')
-                                            <a href="{{ route('admin.link.edit', $link->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('link.edit', $link->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                         @endcan
-                                        
+
                                         @can('link.delete')
                                             <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $link->id }}">
                                                 <i class="fa fa-trash"></i>
-                                            </button>  
+                                            </button>
                                         @endcan
                                     </td>
                                 </tr>
@@ -101,7 +101,7 @@
 
                     //ajax delete
                     jQuery.ajax({
-                        url: "{{ route("admin.link.index") }}/"+id,
+                        url: "{{ route("link.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

@@ -62,10 +62,10 @@ class LinkController extends Controller
 
         if ($link) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.link.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('link.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.link.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('link.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -112,10 +112,10 @@ class LinkController extends Controller
 
         if ($link) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.link.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('link.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.link.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('link.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 

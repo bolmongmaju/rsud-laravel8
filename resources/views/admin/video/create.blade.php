@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('admin.video.store') }}" method="POST">
+                        <form action="{{ route('video.store') }}" method="POST">
                             @csrf
 
                             <div class="form-group">

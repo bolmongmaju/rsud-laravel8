@@ -65,10 +65,10 @@ class ContactController extends Controller
 
         if ($contact) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.contact.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('contact.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.contact.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('contact.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -113,10 +113,10 @@ class ContactController extends Controller
 
         if ($contact) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.contact.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('contact.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.contact.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('contact.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 }

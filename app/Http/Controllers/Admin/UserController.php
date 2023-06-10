@@ -69,10 +69,10 @@ class UserController extends Controller
 
         if($user){
             //redirect dengan pesan sukses
-            return redirect()->route('admin.user.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('user.index')->with(['success' => 'Data Berhasil Disimpan!']);
         }else{
             //redirect dengan pesan error
-            return redirect()->route('admin.user.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('user.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -122,10 +122,10 @@ class UserController extends Controller
 
         if($user){
             //redirect dengan pesan sukses
-            return redirect()->route('admin.user.index')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route('user.index')->with(['success' => 'Data Berhasil Diupdate!']);
         }else{
             //redirect dengan pesan error
-            return redirect()->route('admin.user.index')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route('user.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 

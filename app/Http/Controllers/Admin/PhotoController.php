@@ -58,10 +58,10 @@ class PhotoController extends Controller
 
         if ($photo) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.photo.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('photo.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.photo.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('photo.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 

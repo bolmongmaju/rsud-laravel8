@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('admin.video.update', $video->id) }}" method="POST">
+                        <form action="{{ route('video.update', $video->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="form-group">

@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.file.update',$file->id) }}" method="POST"
+                    <form action="{{ route('file.update',$file->id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -67,7 +67,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-left">
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a class="btn btn-light" href="{{ route('admin.file.index') }}">Cancel</a>
+                            <a class="btn btn-light" href="{{ route('file.index') }}">Cancel</a>
                         </div>
 
                     </form>

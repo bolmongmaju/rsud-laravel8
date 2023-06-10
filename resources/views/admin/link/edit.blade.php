@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('admin.link.update', $link->id) }}" method="POST">
+                        <form action="{{ route('link.update', $link->id) }}" method="POST">
                             @csrf
                             @method('PUT')
 

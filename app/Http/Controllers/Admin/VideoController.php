@@ -62,10 +62,10 @@ class VideoController extends Controller
 
         if ($video) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.video.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('video.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.video.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('video.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -102,10 +102,10 @@ class VideoController extends Controller
 
         if ($video) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.video.index')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route('video.index')->with(['success' => 'Data Berhasil Diupdate!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.video.index')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route('video.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 

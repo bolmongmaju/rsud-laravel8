@@ -15,12 +15,12 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.sosmed.index') }}" method="GET">
+                    <form action="{{ route('sosmed.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 @can('sosmed.create')
                                     <div class="input-group-prepend">
-                                        <a href="{{ route('admin.sosmed.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                                        <a href="{{ route('sosmed.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
                                 @endcan
                                 <input type="text" class="form-control" name="q"
@@ -52,15 +52,15 @@
                                     <td>{{ $sosmed->icon }}</td>
                                     <td class="text-center">
                                         @can('sosmed.edit')
-                                            <a href="{{ route('admin.sosmed.edit', $sosmed->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('sosmed.edit', $sosmed->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                         @endcan
-                                        
+
                                         @can('sosmed.delete')
                                             <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $sosmed->id }}">
                                                 <i class="fa fa-trash"></i>
-                                            </button>  
+                                            </button>
                                         @endcan
                                     </td>
                                 </tr>
@@ -103,7 +103,7 @@
 
                     //ajax delete
                     jQuery.ajax({
-                        url: "{{ route("admin.sosmed.index") }}/"+id,
+                        url: "{{ route("sosmed.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

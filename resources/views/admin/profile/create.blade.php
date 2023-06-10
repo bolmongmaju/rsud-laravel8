@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.profile.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('profile.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -43,7 +43,7 @@
                             </div>
                             @enderror
                         </div>
-                        
+
                         <div class="form-group">
                             <label>LOGO</label>
                             <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror">

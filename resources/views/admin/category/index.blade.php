@@ -15,12 +15,12 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.category.index') }}" method="GET">
+                    <form action="{{ route('category.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 @can('categories.create')
                                     <div class="input-group-prepend">
-                                        <a href="{{ route('admin.category.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                                        <a href="{{ route('category.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
                                 @endcan
                                 <input type="text" class="form-control" name="q"
@@ -48,15 +48,15 @@
                                     <td>{{ $category->name }}</td>
                                     <td class="text-center">
                                         @can('categories.edit')
-                                            <a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('category.edit', $category->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                         @endcan
-                                        
+
                                         @can('categories.delete')
                                             <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $category->id }}">
                                                 <i class="fa fa-trash"></i>
-                                            </button>  
+                                            </button>
                                         @endcan
                                     </td>
                                 </tr>
@@ -99,7 +99,7 @@
 
                     //ajax delete
                     jQuery.ajax({
-                        url: "{{ route("admin.category.index") }}/"+id,
+                        url: "{{ route("category.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

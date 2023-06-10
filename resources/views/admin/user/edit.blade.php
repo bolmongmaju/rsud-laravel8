@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.user.update', $user->id) }}" method="POST"
+                    <form action="{{ route('user.update', $user->id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -66,7 +66,7 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">ROLE</label>
-                           
+
                             @foreach ($roles as $role)
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="role[]" value="{{ $role->name }}"

@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.contact.update', $contact->id) }}" method="POST">
+                    <form action="{{ route('contact.update', $contact->id) }}" method="POST">
                         @csrf
                         @method('PUT')
 
@@ -92,7 +92,7 @@
                                 <div class="form-group">
                                     <label>JAM BUKA</label>
                                     <input type="time" name="jam_buka" value="{{ old('jam_buka') ?? $contact->jam_buka }}" class="form-control @error('jam_buka') is-invalid @enderror">
-    
+
                                     @error('jam_buka')
                                     <div class="invalid-feedback" style="display: block">
                                         {{ $message }}
@@ -104,7 +104,7 @@
                                 <div class="form-group">
                                     <label>JAM TUTUP</label>
                                     <input type="time" name="jam_tutup" value="{{ old('jam_tutup') ?? $contact->jam_tutup }}" class="form-control @error('jam_tutup') is-invalid @enderror">
-    
+
                                     @error('jam_tutup')
                                     <div class="invalid-feedback" style="display: block">
                                         {{ $message }}

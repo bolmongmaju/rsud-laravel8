@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.role.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('role.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -32,7 +32,7 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">PERMISSIONS</label>
-                            
+
                             @foreach ($permissions as $permission)
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" name="permissions[]" value="{{ $permission->name }}" id="check-{{ $permission->id }}">

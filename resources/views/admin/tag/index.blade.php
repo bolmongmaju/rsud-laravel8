@@ -15,12 +15,12 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.tag.index') }}" method="GET">
+                    <form action="{{ route('tag.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 @can('tags.create')
                                     <div class="input-group-prepend">
-                                        <a href="{{ route('admin.tag.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                                        <a href="{{ route('tag.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
                                 @endcan
                                 <input type="text" class="form-control" name="q"
@@ -48,11 +48,11 @@
                                     <td>{{ $tag->name }}</td>
                                     <td class="text-center">
                                         @can('tags.edit')
-                                            <a href="{{ route('admin.tag.edit', $tag->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('tag.edit', $tag->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                         @endcan
-                                        
+
                                         @can('tags.delete')
                                             <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $tag->id }}">
                                                 <i class="fa fa-trash"></i>
@@ -99,7 +99,7 @@
 
                     //ajax delete
                     jQuery.ajax({
-                        url: "{{ route("admin.tag.index") }}/"+id,
+                        url: "{{ route("tag.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

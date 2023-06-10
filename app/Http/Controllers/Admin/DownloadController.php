@@ -68,10 +68,10 @@ class DownloadController extends Controller
 
         if ($download) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.download.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('download.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.download.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('download.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -124,10 +124,10 @@ class DownloadController extends Controller
 
         if ($download) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.download.index')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route('download.index')->with(['success' => 'Data Berhasil Diupdate!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.download.index')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route('download.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 

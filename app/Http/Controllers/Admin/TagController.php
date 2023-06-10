@@ -57,15 +57,15 @@ class TagController extends Controller
 
         $tag = Tag::create([
             'name' => $request->input('name'),
-            'slug' => Str::slug($request->input('name'), '-') 
+            'slug' => Str::slug($request->input('name'), '-')
         ]);
 
         if($tag){
             //redirect dengan pesan sukses
-            return redirect()->route('admin.tag.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('tag.index')->with(['success' => 'Data Berhasil Disimpan!']);
         }else{
             //redirect dengan pesan error
-            return redirect()->route('admin.tag.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('tag.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -96,15 +96,15 @@ class TagController extends Controller
         $tag = Tag::findOrFail($tag->id);
         $tag->update([
             'name' => $request->input('name'),
-            'slug' => Str::slug($request->input('name'), '-') 
+            'slug' => Str::slug($request->input('name'), '-')
         ]);
 
         if($tag){
             //redirect dengan pesan sukses
-            return redirect()->route('admin.tag.index')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route('tag.index')->with(['success' => 'Data Berhasil Diupdate!']);
         }else{
             //redirect dengan pesan error
-            return redirect()->route('admin.tag.index')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route('tag.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 

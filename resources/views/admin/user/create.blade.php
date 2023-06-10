@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -48,7 +48,7 @@
                                     <label>PASSWORD</label>
                                     <input type="password" name="password" value="{{ old('password') }}" placeholder="Masukkan Password"
                                         class="form-control @error('password') is-invalid @enderror">
-        
+
                                     @error('password')
                                     <div class="invalid-feedback" style="display: block">
                                         {{ $message }}
@@ -67,7 +67,7 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">ROLE</label>
-                            
+
                             @foreach ($roles as $role)
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" name="role[]" value="{{ $role->name }}" id="check-{{ $role->id }}">

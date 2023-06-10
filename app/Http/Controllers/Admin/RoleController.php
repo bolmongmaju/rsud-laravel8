@@ -65,10 +65,10 @@ class RoleController extends Controller
 
         if($role){
             //redirect dengan pesan sukses
-            return redirect()->route('admin.role.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('role.index')->with(['success' => 'Data Berhasil Disimpan!']);
         }else{
             //redirect dengan pesan error
-            return redirect()->route('admin.role.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('role.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -96,7 +96,7 @@ class RoleController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:roles,name,'.$role->id
         ]);
-        
+
         $role = Role::findOrFail($role->id);
         $role->update([
             'name' => $request->input('name')
@@ -107,10 +107,10 @@ class RoleController extends Controller
 
         if($role){
             //redirect dengan pesan sukses
-            return redirect()->route('admin.role.index')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route('role.index')->with(['success' => 'Data Berhasil Diupdate!']);
         }else{
             //redirect dengan pesan error
-            return redirect()->route('admin.role.index')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route('role.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 

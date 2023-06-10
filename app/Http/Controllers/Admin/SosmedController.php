@@ -63,10 +63,10 @@ class SosmedController extends Controller
 
         if ($sosmed) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.sosmed.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('sosmed.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.sosmed.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('sosmed.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -114,10 +114,10 @@ class SosmedController extends Controller
 
         if ($sosmed) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.sosmed.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('sosmed.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.sosmed.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('sosmed.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 

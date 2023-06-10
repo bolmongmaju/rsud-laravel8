@@ -86,10 +86,10 @@ class NewsController extends Controller
 
         if ($news) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.news.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('news.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.news.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('news.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -159,10 +159,10 @@ class NewsController extends Controller
 
         if ($news) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.news.index')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route('news.index')->with(['success' => 'Data Berhasil Diupdate!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.news.index')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route('news.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 

@@ -17,7 +17,7 @@
 
                     <div class="card-body">
 
-                        <form action="{{ route('admin.photo.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('photo.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="card-body">
-                    
+
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
@@ -123,7 +123,7 @@
 
                     //ajax delete
                     jQuery.ajax({
-                        url: "{{ route("admin.photo.index") }}/"+id,
+                        url: "{{ route("photo.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

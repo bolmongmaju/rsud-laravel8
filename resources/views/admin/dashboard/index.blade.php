@@ -23,21 +23,7 @@
                 </div>
               </div>
             </div>
-            {{-- <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-              <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                  <i class="fa fa-bell text-white fa-2x"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>AGENDA</h4>
-                  </div>
-                  <div class="card-body">
-                    {{ App\Models\Event::count() ?? '0' }}
-                  </div>
-                </div>
-              </div>
-            </div> --}}
+
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="card card-statistic-1">
                 <div class="card-icon bg-warning">
@@ -68,21 +54,7 @@
                 </div>
               </div>
             </div>
-            {{-- <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-              <div class="card card-statistic-1">
-                <div class="card-icon bg-success">
-                  <i class="fa fa-users text-white fa-2x"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>PENGUNJUNG</h4>
-                  </div>
-                  <div class="card-body">
-                    {{ App\Models\Visitor::count() ?? '0' }}
-                  </div>
-                </div>
-              </div>
-            </div>                  --}}
+
           </div>
 
     </section>

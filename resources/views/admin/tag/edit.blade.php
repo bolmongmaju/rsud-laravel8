@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('admin.tag.update', $tag->id) }}" method="POST">
+                        <form action="{{ route('tag.update', $tag->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="form-group">

@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('admin.sosmed.store') }}" method="POST">
+                        <form action="{{ route('sosmed.store') }}" method="POST">
                             @csrf
 
                             <div class="form-group">

@@ -17,7 +17,7 @@
 
                     <div class="card-body">
 
-                        <form action="{{ route('admin.slider.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('slider.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="card-body">
-                    
+
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
@@ -134,7 +134,7 @@
 
                     //ajax delete
                     jQuery.ajax({
-                        url: "{{ route("admin.slider.index") }}/"+id,
+                        url: "{{ route("slider.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

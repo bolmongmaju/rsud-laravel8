@@ -15,12 +15,12 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.news.index') }}" method="GET">
+                    <form action="{{ route('news.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 @can('news.create')
                                     <div class="input-group-prepend">
-                                        <a href="{{ route('admin.news.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                                        <a href="{{ route('news.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
                                 @endcan
                                 <input type="text" class="form-control" name="q"
@@ -56,7 +56,7 @@
                                     <td>Telah Terbit <br> {{ $n->created_at }}</td>
                                     <td class="text-center">
                                         @can('news.edit')
-                                            <a href="{{ route('admin.news.edit', $n->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('news.edit', $n->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                         @endcan
@@ -108,7 +108,7 @@
 
                     //ajax delete
                     jQuery.ajax({
-                        url: "{{ route("admin.news.index") }}/"+id,
+                        url: "{{ route("news.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

@@ -16,13 +16,13 @@
 
                 <div class="card-body">
 
-                    <form action="{{ route('admin.profpeg.index') }}" method="GET">
+                    <form action="{{ route('profpeg.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 @can('downloads.create')
                                 <div class="input-group-prepend">
 
-                                    <a href="{{ route('admin.profpeg.create') }}" class="btn btn-primary"
+                                    <a href="{{ route('profpeg.create') }}" class="btn btn-primary"
                                         style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                 </div>
                                 @endcan
@@ -54,7 +54,7 @@
                                     <td class="text-center">
                                     @can('profpegs.edit')
 
-                                            <a href="{{ route('admin.profpeg.edit', $item->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('profpeg.edit', $item->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                         @endcan
@@ -103,7 +103,7 @@
                     //ajax delete
                     jQuery.ajax({
 
-                        url: "{{ route("admin.profpeg.index") }}/"+id,
+                        url: "{{ route("profpeg.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

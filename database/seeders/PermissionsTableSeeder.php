@@ -109,5 +109,11 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'profpegs.create']);
         Permission::create(['name' => 'profpegs.edit']);
         Permission::create(['name' => 'profpegs.delete']);
+
+        //permission for faq
+        Permission::create(['name' => 'faq.index']);
+        Permission::create(['name' => 'faq.create']);
+        Permission::create(['name' => 'faq.edit']);
+        Permission::create(['name' => 'faq.delete']);
     }
 }

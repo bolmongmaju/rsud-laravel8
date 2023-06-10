@@ -58,10 +58,10 @@ class SliderController extends Controller
 
         if ($slider) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.slider.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('slider.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.slider.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('slider.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 

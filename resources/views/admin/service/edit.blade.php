@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.service.update',$service->id) }}" method="POST"
+                    <form action="{{ route('service.update',$service->id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -71,7 +71,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-left">
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a class="btn btn-light" href="{{ route('admin.service.index') }}">Cancel</a>
+                            <a class="btn btn-light" href="{{ route('service.index') }}">Cancel</a>
                         </div>
 
                     </form>

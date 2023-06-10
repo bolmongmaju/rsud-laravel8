@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.permission.index') }}" method="GET">
+                    <form action="{{ route('permission.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" name="q"

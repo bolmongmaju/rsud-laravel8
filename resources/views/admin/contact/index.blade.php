@@ -17,7 +17,7 @@
                 <div class="card-body">
                     @can('contact.create')
                         <div class="input-group-prepend">
-                            <a href="{{ route('admin.contact.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                            <a href="{{ route('contact.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                         </div>
                     @endcan
 
@@ -42,7 +42,7 @@
                                     <td class="text-center">
 
                                     @can('contact.edit')
-                                        <a href="{{ route('admin.contact.edit', $contact->id) }}" class="btn btn-sm btn-warning">
+                                        <a href="{{ route('contact.edit', $contact->id) }}" class="btn btn-sm btn-warning">
                                             <i class="fa fa-pencil-alt"></i>
                                         </a>
                                     @endcan
@@ -64,6 +64,6 @@
 </div>
 
 <script>
-    
+
 </script>
 @stop

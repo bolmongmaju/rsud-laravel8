@@ -17,10 +17,10 @@
                 <div class="card-body">
                     @can('profile.create')
                         <div class="input-group-prepend">
-                            <a href="{{ route('admin.profile.create') }}" id="btnProfile" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                            <a href="{{ route('profile.create') }}" id="btnProfile" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                         </div>
                     @endcan
-                    
+
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
@@ -45,7 +45,7 @@
                                     <td class="text-center">
 
                                         @can('profile.edit')
-                                            <a href="{{ route('admin.profile.edit', $profile->id) }}" class="btn btn-sm btn-warning">
+                                            <a href="{{ route('profile.edit', $profile->id) }}" class="btn btn-sm btn-warning">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                         @endcan
@@ -58,7 +58,7 @@
                             @endforelse
                             </tbody>
                         </table>
-                        
+
                     </div>
                 </div>
             </div>
@@ -68,6 +68,6 @@
 </div>
 
 <script>
-    
+
 </script>
 @stop

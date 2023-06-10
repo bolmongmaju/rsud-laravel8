@@ -70,10 +70,10 @@ class FileController extends Controller
 
         if ($input) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.file.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('file.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.file.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('file.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -139,10 +139,10 @@ class FileController extends Controller
 
         if ($file) {
             //redirect dengan pesan sukses
-            return redirect()->route('admin.file.index')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route('file.index')->with(['success' => 'Data Berhasil Diupdate!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('admin.file.index')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route('file.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 

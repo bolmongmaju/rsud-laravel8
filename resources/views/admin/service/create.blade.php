@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.service.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('service.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -68,7 +68,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-left">
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a class="btn btn-light" href="{{ route('admin.service.index') }}">Batal</a>
+                            <a class="btn btn-light" href="{{ route('service.index') }}">Batal</a>
                         </div>
 
                     </form>

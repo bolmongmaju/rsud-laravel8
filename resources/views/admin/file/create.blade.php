@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.file.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('file.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -69,7 +69,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-left">
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a class="btn btn-light" href="{{ route('admin.file.index') }}">Batal</a>
+                            <a class="btn btn-light" href="{{ route('file.index') }}">Batal</a>
                         </div>
 
                     </form>

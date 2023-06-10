@@ -15,12 +15,12 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.service.index') }}" method="GET">
+                    <form action="{{ route('service.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 @can('services.create')
                                 <div class="input-group-prepend">
-                                    <a href="{{ route('admin.service.create') }}" class="btn btn-primary"
+                                    <a href="{{ route('service.create') }}" class="btn btn-primary"
                                         style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                 </div>
                                 @endcan
@@ -55,7 +55,7 @@
                                     <td>{{ $service->link }}</td>
                                     <td class="text-center">
                                     @can('services.edit')
-                                            <a href="{{ route('admin.service.edit', $service->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('service.edit', $service->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                         @endcan
@@ -108,7 +108,7 @@
 
                     //ajax delete
                     jQuery.ajax({
-                        url: "{{ route("admin.service.index") }}/"+id,
+                        url: "{{ route("service.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

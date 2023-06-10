@@ -15,12 +15,12 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.video.index') }}" method="GET">
+                    <form action="{{ route('video.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 @can('videos.create')
                                     <div class="input-group-prepend">
-                                        <a href="{{ route('admin.video.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                                        <a href="{{ route('video.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
                                 @endcan
                                 <input type="text" class="form-control" name="q"
@@ -54,11 +54,11 @@
                                     </td>
                                     <td class="text-center">
                                         @can('videos.edit')
-                                            <a href="{{ route('admin.video.edit', $video->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('video.edit', $video->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                         @endcan
-                                        
+
                                         @can('videos.delete')
                                             <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $video->id }}">
                                                 <i class="fa fa-trash"></i>
@@ -105,7 +105,7 @@
 
                     //ajax delete
                     jQuery.ajax({
-                        url: "{{ route("admin.video.index") }}/"+id,
+                        url: "{{ route("video.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

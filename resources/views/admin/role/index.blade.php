@@ -15,12 +15,12 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.role.index') }}" method="GET">
+                    <form action="{{ route('role.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 @can('roles.create')
                                     <div class="input-group-prepend">
-                                        <a href="{{ route('admin.role.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                                        <a href="{{ route('role.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
                                 @endcan
                                 <input type="text" class="form-control" name="q"
@@ -54,11 +54,11 @@
                                     </td>
                                     <td class="text-center">
                                         @can('roles.edit')
-                                            <a href="{{ route('admin.role.edit', $role->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('role.edit', $role->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                         @endcan
-                                        
+
                                         @can('roles.delete')
                                             <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $role->id }}">
                                                 <i class="fa fa-trash"></i>
@@ -101,7 +101,7 @@
 
                     //ajax delete
                     jQuery.ajax({
-                        url: "{{ route("admin.role.index") }}/"+id,
+                        url: "{{ route("role.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token
