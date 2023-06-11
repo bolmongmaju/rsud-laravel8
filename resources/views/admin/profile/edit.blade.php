@@ -112,17 +112,6 @@
                             @enderror
                         </div>
 
-                        {{-- <div class="form-group">
-                            <label>DAFTAR PEGAWAI</label>
-                            <textarea class="form-control content @error('pegawai') is-invalid @enderror" name="pegawai"
-                                placeholder="Masukkan Daftar Pegawai" rows="10">{!! old('pegawai') ?? $profile->pegawai !!}</textarea>
-                            @error('pegawai')
-                            <div class="invalid-feedback" style="display: block">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div> --}}
-
                         <div class="form-group">
                             <label>TUPOKSI</label>
                             <textarea class="form-control content @error('tupoksi') is-invalid @enderror" name="tupoksi"
@@ -206,6 +195,21 @@
 
                             @if(Storage::disk('public')->exists($profile->maklumat ?? null))
                                 <img src="{{ Storage::url($profile->maklumat ?? null) }}" width="200px" />
+                            @endif
+                        </div>
+
+                        <div class="form-group">
+                            <label>MOTTO (Opsional)</label>
+                            <input type="file" name="motto" class="form-control @error('motto') is-invalid @enderror">
+
+                            @error('motto')
+                            <div class="invalid-feedback" style="display: block">
+                                {{ $message }}
+                            </div>
+                            @enderror
+
+                            @if(Storage::disk('public')->exists($profile->motto ?? null))
+                                <img src="{{ Storage::url($profile->motto ?? null) }}" width="200px" />
                             @endif
                         </div>
 

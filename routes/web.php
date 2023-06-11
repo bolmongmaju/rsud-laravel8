@@ -30,6 +30,7 @@ Route::prefix('profil')->group(function () {
     Route::get('/visi-misi', [PageController::class, 'visimisi'])->name('visimisi');
     Route::get('/struktur-organisasi', [PageController::class, 'struktur_organisasi'])->name('struktur');
     Route::get('/maklumat-pelayanan', [PageController::class, 'maklumat_pelayanan'])->name('maklumat');
+    Route::get('/motto', [PageController::class, 'motto'])->name('motto');
     Route::get('/dasar-hukum', [PageController::class, 'dasar_hukum'])->name('dasarhukum');
     Route::get('/prestasi', [PageController::class, 'prestasi'])->name('prestasi');
 });

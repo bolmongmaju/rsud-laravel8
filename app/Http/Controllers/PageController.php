@@ -104,6 +104,16 @@ class PageController extends Controller
         return view('rsud.detail.maklumat', compact('item', 'sosmeds', 'links', 'profil', 'contact'));
     }
 
+    public function motto()
+    {
+        $item = Profile::select('motto')->first();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.motto', compact('item', 'sosmeds', 'links', 'profil', 'contact'));
+    }
+
     public function prestasi()
     {
         $contact = Contact::first();

@@ -40,6 +40,7 @@
                         <li><a class="dropdown-item" href="{{ route('visimisi') }}">Visi Misi</a></li>
                         <li><a class="dropdown-item" href="{{ route('struktur') }}">Struktur Organisasi</a></li>
                         <li><a class="dropdown-item" href="{{ route('maklumat') }}">Maklumat Pelayanan</a></li>
+                        <li><a class="dropdown-item" href="{{ route('motto') }}">Motto</a></li>
                         <li><a class="dropdown-item" href="{{ route('dasarhukum') }}">Dasar Hukum</a></li>
                         <li><a class="dropdown-item" href="{{ route('prestasi') }}">Prestasi</a></li>
 

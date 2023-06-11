@@ -99,17 +99,6 @@
                             @enderror
                         </div>
 
-                        {{-- <div class="form-group">
-                            <label>DAFTAR PEGAWAI</label>
-                            <textarea class="form-control content @error('pegawai') is-invalid @enderror" name="pegawai"
-                                placeholder="Masukkan Daftar Pegawai" rows="10">{!! old('pegawai') !!}</textarea>
-                            @error('pegawai')
-                            <div class="invalid-feedback" style="display: block">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div> --}}
-
                         <div class="form-group">
                             <label>TUPOKSI</label>
                             <textarea class="form-control content @error('tupoksi') is-invalid @enderror" name="tupoksi"
@@ -181,6 +170,17 @@
                             <input type="file" name="maklumat" class="form-control @error('maklumat') is-invalid @enderror">
 
                             @error('maklumat')
+                            <div class="invalid-feedback" style="display: block">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label>MOTTO (Opsional)</label>
+                            <input type="file" name="motto" class="form-control @error('motto') is-invalid @enderror">
+
+                            @error('motto')
                             <div class="invalid-feedback" style="display: block">
                                 {{ $message }}
                             </div>

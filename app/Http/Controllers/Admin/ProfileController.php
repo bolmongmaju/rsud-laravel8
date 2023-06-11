@@ -59,6 +59,7 @@ class ProfileController extends Controller
             'struktur'      => 'image|mimes:jpeg,jpg,png|max:2048',
             'foto_pimpinan' => 'image|mimes:jpeg,jpg,png|max:2048',
             'maklumat'      => 'image|mimes:jpeg,jpg,png|max:2048',
+            'motto'         => 'image|mimes:jpeg,jpg,png|max:2048',
         ]);
 
         if ($request->file('logo')) {
@@ -81,6 +82,10 @@ class ProfileController extends Controller
             $maklumat = $request->file('maklumat')->store('assets/profile', 'public');
         }
 
+        if ($request->file('motto')) {
+            $motto = $request->file('motto')->store('assets/profile', 'public');
+        }
+
         $profile = Profile::create([
             'nama_opd'            => $request->input('nama'),
             'short_name'          => $request->input('short_name'),
@@ -89,7 +94,6 @@ class ProfileController extends Controller
             'visi'                => $request->input('visi'),
             'misi'                => $request->input('misi'),
             'program'             => $request->input('program'),
-            // 'pegawai'             => $request->input('pegawai'),
             'tupoksi'             => $request->input('tupoksi'),
             'kata_sambutan'       => $request->input('kata_sambutan'),
             'logo'                => ($request->file('logo')) ? $logo : null,
@@ -97,6 +101,7 @@ class ProfileController extends Controller
             'struktur_organisasi' => ($request->file('struktur')) ? $struktur : null,
             'foto_pimpinan'       => ($request->file('foto_pimpinan')) ? $foto_pimpinan : null,
             'maklumat'            => ($request->file('maklumat')) ? $maklumat : null,
+            'motto'               => ($request->file('motto')) ? $motto : null,
         ]);
 
         if ($profile) {
@@ -136,6 +141,7 @@ class ProfileController extends Controller
             'struktur'      => 'image|mimes:jpeg,jpg,png|max:2048',
             'foto_pimpinan' => 'image|mimes:jpeg,jpg,png|max:2048',
             'maklumat'      => 'image|mimes:jpeg,jpg,png|max:2048',
+            'motto'         => 'image|mimes:jpeg,jpg,png|max:2048',
         ]);
 
         if ($request->file('logo')) {
@@ -163,6 +169,11 @@ class ProfileController extends Controller
             $maklumat = $request->file('maklumat')->store('assets/profile', 'public');
         }
 
+        if ($request->file('motto')) {
+            Storage::delete($profile->motto);
+            $motto = $request->file('motto')->store('assets/profile', 'public');
+        }
+
         $profile->findOrFail($profile->id)->update([
             'nama_opd'            => $request->input('nama'),
             'short_name'          => $request->input('short_name'),
@@ -171,7 +182,6 @@ class ProfileController extends Controller
             'visi'                => $request->input('visi'),
             'misi'                => $request->input('misi'),
             'program'             => $request->input('program'),
-            // 'pegawai'             => $request->input('pegawai'),
             'tupoksi'             => $request->input('tupoksi'),
             'kata_sambutan'       => $request->input('kata_sambutan'),
             'logo'                => ($request->file('logo')) ? $logo : $profile->logo,
@@ -179,6 +189,7 @@ class ProfileController extends Controller
             'struktur_organisasi' => ($request->file('struktur')) ? $struktur : $profile->struktur_organisasi,
             'foto_pimpinan'       => ($request->file('foto_pimpinan')) ? $foto_pimpinan : $profile->foto_pimpinan,
             'maklumat'            => ($request->file('maklumat')) ? $maklumat : $profile->maklumat,
+            'motto'               => ($request->file('motto')) ? $motto : $profile->motto,
         ]);
 
         if ($profile) {
