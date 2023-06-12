@@ -34,6 +34,9 @@
 <section class="section service gray-bg mt-5">
 	@include('rsud.layouts.faq')
 </section>
+<section class="section clients">
+	@include('rsud.layouts.link')
+</section>
 
 <!-- footer Start -->
 <footer class="footer section gray-bg">
