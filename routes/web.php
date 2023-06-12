@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\SosmedController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -70,12 +71,14 @@ Route::get('/kontak', [PageController::class, 'kontak'])->name('kontak');
 // Route::get('/download', [App\Http\Controllers\PageController::class, 'download']);
 // Route::get('/getdownload/{downloads:id}', [App\Http\Controllers\PageController::class, 'getDownload'])->name('getdownload');
 
-Auth::routes([
-    'register' => false,
-    'reset'    => false,  // for resetting passwords
-    'confirm'  => false, // for additional password confirmations
-    'verify'   => false, // for email verification
-]);
+Route::prefix('bolmongmaju')->group(function () {
+    Auth::routes([
+        'register' => false,
+        'reset'    => false,  // for resetting passwords
+        'confirm'  => false, // for additional password confirmations
+        'verify'   => false, // for email verification
+    ]);
+});
 
 Route::prefix('admin')->group(function () {
     Route::group(['middleware' => 'auth'], function () {
