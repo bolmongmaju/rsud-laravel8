@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Link;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LinkController extends Controller
 {
@@ -53,11 +54,17 @@ class LinkController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'url'  => 'required',
+            'image' => 'image|mimes:jpeg,jpg,png|max:2048',
         ]);
+
+        if ($request->file('image')) {
+            $image = $request->file('image')->store('assets/links', 'public');
+        }
 
         $link = Link::create([
             'name' => $request->input('name'),
             'url'  => $request->input('url'),
+            'image'  => ($request->file('image')) ? $image : null,
         ]);
 
         if ($link) {
@@ -103,11 +110,18 @@ class LinkController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'url'  => 'required',
+            'image' => 'image|mimes:jpeg,jpg,png|max:2048',
         ]);
+
+        if ($request->file('image')) {
+            Storage::delete($link->image);
+            $image = $request->file('image')->store('assets/links', 'public');
+        }
 
         $link = Link::findOrFail($link->id)->update([
             'name' => $request->input('name'),
             'url'  => $request->input('url'),
+            'image' => ($request->file('image')) ? $image : $link->image,
         ]);
 
         if ($link) {
@@ -128,6 +142,7 @@ class LinkController extends Controller
     public function destroy($id)
     {
         $link = Link::findOrFail($id);
+        Storage::delete($link->image);
         $link->delete();
 
         if ($link) {

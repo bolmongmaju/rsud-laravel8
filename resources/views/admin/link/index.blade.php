@@ -39,6 +39,7 @@
                                 <th scope="col" style="text-align: center;width: 6%">NO.</th>
                                 <th scope="col">NAMA</th>
                                 <th scope="col">URL</th>
+                                <th scope="col">IMAGE</th>
                                 <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                             </tr>
                             </thead>
@@ -48,6 +49,12 @@
                                     <th scope="row" style="text-align: center">{{ ++$no + ($links->currentPage()-1) * $links->perPage() }}</th>
                                     <td>{{ $link->name }}</td>
                                     <td><a href="{{ $link->url }}">{{ $link->url }}</a></td>
+                                    <td>
+                                        @if(Storage::disk('public')->exists($link->image ?? null))
+
+                                        <img src="{{ Storage::url($link->image ?? null) }}" width="100px" alt="image-link" />
+                                        @endif
+                                    </td>
                                     <td class="text-center">
                                         @can('link.edit')
                                             <a href="{{ route('link.edit', $link->id) }}" class="btn btn-sm btn-primary">
@@ -64,7 +71,7 @@
                                 </tr>
                             @empty
                             <tr>
-                                <td colspan="4">Empty</td>
+                                <td colspan="5">Empty</td>
                             </tr>
                             @endforelse
                             </tbody>

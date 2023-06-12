@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('link.update', $link->id) }}" method="POST">
+                        <form action="{{ route('link.update', $link->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
@@ -39,6 +39,21 @@
                                     {{ $message }}
                                 </div>
                                 @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label>IMAGE</label>
+                                <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
+
+                                @error('image')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+
+                                @if(Storage::disk('public')->exists($link->image ?? null))
+                                    <img src="{{ Storage::url($link->image ?? null) }}" width="200px" />
+                                @endif
                             </div>
 
                             <button class="btn btn-primary mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i> UPDATE</button>

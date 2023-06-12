@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('link.store') }}" method="POST">
+                        <form action="{{ route('link.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
@@ -34,6 +34,17 @@
                                 <input type="text" name="url" value="{{ old('url') }}" placeholder="Masukkan URL" class="form-control @error('url') is-invalid @enderror">
 
                                 @error('url')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label>IMAGE</label>
+                                <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
+
+                                @error('image')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
                                 </div>
