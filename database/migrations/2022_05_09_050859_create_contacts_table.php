@@ -22,6 +22,7 @@ class CreateContactsTable extends Migration
             $table->time('jam_buka')->nullable();
             $table->time('jam_tutup')->nullable();
             $table->text('maps')->nullable();
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }
