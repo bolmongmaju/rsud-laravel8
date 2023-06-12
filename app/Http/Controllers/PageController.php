@@ -25,6 +25,7 @@ use App\Models\Profile;
 use App\Models\Profpeg;
 use App\Models\Sosmed;
 use App\Models\Video;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Http;
 
 class PageController extends Controller
@@ -178,6 +179,20 @@ class PageController extends Controller
         return view('rsud.detail.berita_detail', compact('news', 'category', 'tags', 'news_new', 'contact', 'profil', 'sosmeds', 'links'));
     }
 
+    public function kategori(Category $kategori)
+    {
+        $news = $kategori->news()->with('user')->latest()->paginate(5);
+        $category = Category::latest()->get();
+        $tags = Tag::latest()->get();
+        $news_new = News::take(3)->latest()->get();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+
+        return view('rsud.detail.berita', compact('news', 'category', 'tags', 'news_new', 'contact', 'profil', 'sosmeds', 'links'));
+    }
+
     public function kontak()
     {
         $kontak = Contact::latest()->first();
@@ -188,7 +203,6 @@ class PageController extends Controller
 
         return view('rsud.detail.kontak', compact('kontak', 'contact', 'profil', 'sosmeds', 'links'));
     }
-
 
     // public function download()
     // {
@@ -204,26 +218,19 @@ class PageController extends Controller
     // }
 
 
-    // public function kategori(Category $category)
-    // {
 
-    //     $kategori = Category::latest()->get();
-    //     $tags = Tag::latest()->get();
-    //     $sidebar = News::skip(5)->Paginate(5);
-    //     $posts = $category->news()->latest()->paginate(4);
+    public function tag(Tag $tag)
+    {
+        $news = $tag->news()->latest()->paginate(5);
+        $category = Category::latest()->get();
+        $tags = Tag::latest()->get();
+        $news_new = News::take(3)->latest()->get();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
 
-    //     return view('opd/detail/berita', compact('posts', 'kategori', 'sidebar', 'tags'));
-    // }
-
-    // public function tag(Tag $tag)
-    // {
-
-    //     $kategori = Category::latest()->get();
-    //     $tags = Tag::latest()->get();
-    //     $sidebar = News::skip(5)->Paginate(5);
-    //     $posts = $tag->news()->latest()->paginate(4);
-
-    //     return view('opd/detail/berita', compact('posts', 'kategori', 'sidebar', 'tags'));
-    // }
+        return view('rsud.detail.berita', compact('news', 'category', 'tags', 'news_new', 'contact', 'profil', 'sosmeds', 'links'));
+    }
 
 }

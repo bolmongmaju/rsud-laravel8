@@ -7,7 +7,7 @@
         <div class="col-lg-8">
           <div class="row">
 
-            @forelse ($news as $item)
+            @foreach ($news as $item)
             <div class="col-lg-12 col-md-12 mb-5">
                 <div class="blog-item">
                     <div class="blog-thumb">
@@ -22,15 +22,15 @@
 
                         <h2 class="mt-3 mb-3"><a href="{{ route('berita-detail', $item->slug) }}">{{ $item->title }}</a></h2>
 
-                        <p class="mb-4">{{ Str::limit(strip_tags($item->body), 300) }}</p>
+                        <p class="mb-4">{!! Str::limit(strip_tags($item->body), 300) !!}</p>
 
                         <a href="{{ route('berita-detail', $item->slug) }}" class="btn btn-main btn-icon btn-round-full">Baca <i class="icofont-simple-right ml-2"></i></a>
                     </div>
                 </div>
             </div>
-            @empty
-            <span class="text-sm text-muted">tidak ada data</span>
-            @endforelse
+            {{-- @empty
+            <span class="text-sm text-muted">tidak ada data</span> --}}
+            @endforeach
 
       <div class="col-lg-12 col-md-12">
           <nav class="pagination py-2 d-inline-block">
@@ -61,7 +61,7 @@
 
           @forelse ($news_new as $item)
           <div class="py-2">
-              <span class="text-sm text-muted">{{ \Carbon\Carbon::parse($item->created_at)->diffForhumans() }}</span>
+              <span class="text-sm text-muted">{{ $item->created_at }}</span>
               <h6 class="my-2"><a href="{{ route('berita-detail', $item->slug) }}">{{ $item->title }}</a></h6>
           </div>
           @empty
@@ -75,7 +75,7 @@
           <ul class="list-unstyled">
             @forelse ($category as $item)
             <li class="align-items-center">
-              <a href="#">{{ $item->name }}</a>
+              <a href="{{ route('cari-kategori', $item->slug) }}">{{ $item->name }}</a>
               <span>({{ $item->news->count() }})</span>
             </li>
             @empty
@@ -91,7 +91,7 @@
           <h5 class="mb-4">Tags</h5>
 
           @forelse ($tags as $item)
-          <a href="#">{{ $item->name }}</a>
+          <a href="{{ route('cari-tag', $item->slug) }}">{{ $item->name }}</a>
           @empty
           <span class="text-sm text-muted">tidak ada data</span>
           @endforelse

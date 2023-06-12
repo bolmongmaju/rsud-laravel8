@@ -53,7 +53,7 @@
 
           @forelse ($news_new as $item)
           <div class="py-2">
-              <span class="text-sm text-muted">{{ \Carbon\Carbon::parse($item->created_at)->diffForhumans() }}</span>
+              <span class="text-sm text-muted">{{ $item->created_at }}</span>
               <h6 class="my-2"><a href="{{ route('berita-detail', $item->slug) }}">{{ $item->title }}</a></h6>
           </div>
           @empty
@@ -67,7 +67,7 @@
           <ul class="list-unstyled">
             @forelse ($category as $item)
             <li class="align-items-center">
-              <a href="#">{{ $item->name }}</a>
+              <a href="{{ route('cari-kategori', $item->slug) }}">{{ $item->name }}</a>
               <span>({{ $item->news->count() }})</span>
             </li>
             @empty
@@ -83,7 +83,7 @@
           <h5 class="mb-4">Tags</h5>
 
           @forelse ($tags as $item)
-          <a href="#">{{ $item->name }}</a>
+          <a href="{{ route('cari-tag', $item->slug) }}">{{ $item->name }}</a>
           @empty
           <span class="text-sm text-muted">tidak ada data</span>
           @endforelse

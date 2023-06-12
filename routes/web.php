@@ -51,6 +51,8 @@ Route::prefix('dokter')->group(function () {
 Route::prefix('informasi')->group(function () {
     Route::get('/berita', [PageController::class, 'berita'])->name('berita');
     Route::get('/berita/{news:slug}', [PageController::class, 'berita_detail'])->name('berita-detail');
+    Route::get('/berita/categories/{slug}', [PageController::class, 'kategori'])->name('cari-kategori');
+    Route::get('/berita/tag/{tag:slug}', [PageController::class, 'tag'])->name('cari-tag');
     Route::get('/artikel-kesehatan', [PageController::class, 'artikel_kesehatan'])->name('artikel');
 });
 
@@ -64,9 +66,6 @@ Route::get('/kontak', [PageController::class, 'kontak'])->name('kontak');
 
 
 // Route::get('/berita-cari', [App\Http\Controllers\Pagecontroller::class, 'hascarberita']);
-
-// Route::get('/cari-kategori/{category:id}', [App\Http\Controllers\PageController::class, 'kategori'])->name('cari-kategori');
-// Route::get('/cari-tag/{tag:id}', [App\Http\Controllers\PageController::class, 'tag'])->name('cari-tag');
 
 // Route::get('/download', [App\Http\Controllers\PageController::class, 'download']);
 // Route::get('/getdownload/{downloads:id}', [App\Http\Controllers\PageController::class, 'getDownload'])->name('getdownload');
