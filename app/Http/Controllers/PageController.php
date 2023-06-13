@@ -145,6 +145,26 @@ class PageController extends Controller
         return view('rsud.detail.gawat_darurat', compact('sosmeds', 'links', 'profil', 'contact'));
     }
 
+    // controller for route media
+
+    public function gallery()
+    {
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.gallery', compact('sosmeds', 'links', 'profil', 'contact'));
+    }
+
+    public function dokumen()
+    {
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        return view('rsud.detail.dokumen', compact('sosmeds', 'links', 'profil', 'contact'));
+    }
+
     public function berita()
     {
         $category = Category::latest()->get();

@@ -28,7 +28,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::latest()->when(request()->q, function ($services) {
-            $services = $services->where('nama', 'like', '%' . request()->q . '%');
+            $services = $services->where('name', 'like', '%' . request()->q . '%');
         })->paginate(10);
 
         return view('admin.service.index', compact('services'));
@@ -53,21 +53,23 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nama'       => 'required',
-            'keterangan' => 'required',
-            'icon'       => 'image|mimes:jpeg,jpg,png|max:2000',
+            'name' => 'required',
+            'image' => 'image|mimes:jpeg,jpg,png|max:2048',
         ]);
 
-        //upload icon
-        if ($icon = $request->file('icon')) {
-            $icon->storeAs('public/service-images', $icon->hashName());
+        if ($request->file('image')) {
+            $image = $request->file('image')->store('assets/layanan', 'public');
         }
 
         $service = Service::create([
-            'nama'    => $request->input('nama'),
-            'content' => $request->input('keterangan'),
-            'link'    => $request->input('link'),
-            'icon'    => ($request->file('icon')) ? $icon->hashName() : null,
+            'name'        => $request->input('name'),
+            'slug'        => Str::slug($request->input('name'), '-'),
+            'persyaratan' => $request->input('persyaratan'),
+            'prosedur'    => $request->input('prosedur'),
+            'waktu'       => $request->input('waktu'),
+            'biaya'       => $request->input('biaya'),
+            'produk_layanan' => $request->input('produk_layanan'),
+            'image'       => ($request->file('image')) ? $image : null,
         ]);
 
         if ($service) {
@@ -111,36 +113,25 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         $this->validate($request, [
-            'nama'       => 'required',
-            'keterangan' => 'required',
-            'icon'       => 'image|mimes:jpeg,jpg,png|max:2000',
+            'name' => 'required',
+            'image' => 'image|mimes:jpeg,jpg,png|max:2048',
         ]);
 
-        if ($request->file('icon') == "") {
-
-            $service = Service::findOrFail($service->id);
-            $service->update([
-                'nama'    => $request->input('nama'),
-                'content' => $request->input('keterangan'),
-                'link'    => $request->input('link')
-            ]);
-        } else {
-
-            //remove old image
-            Storage::disk('local')->delete('public/service-images/' . $service->icon);
-
-            //upload new image
-            $icon = $request->file('icon');
-            $icon->storeAs('public/service-images', $icon->hashName());
-
-            $service = Service::findOrFail($service->id);
-            $service->update([
-                'icon'    => $icon->hashName(),
-                'nama'    => $request->input('nama'),
-                'content' => $request->input('keterangan'),
-                'link'    => $request->input('link')
-            ]);
+        if ($request->file('image')) {
+            Storage::delete($service->image);
+            $image = $request->file('image')->store('assets/layanan', 'public');
         }
+
+        $service = Service::findOrFail($service->id)->update([
+            'name'        => $request->input('name'),
+            'slug'        => Str::slug($request->input('name'), '-'),
+            'persyaratan' => $request->input('persyaratan'),
+            'prosedur'    => $request->input('prosedur'),
+            'waktu'       => $request->input('waktu'),
+            'biaya'       => $request->input('biaya'),
+            'produk_layanan' => $request->input('produk_layanan'),
+            'image' => ($request->file('image')) ? $image : $service->image,
+        ]);
 
         if ($service) {
             //redirect dengan pesan sukses
@@ -160,7 +151,7 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         $service = Service::findOrFail($id);
-        $icon = Storage::disk('local')->delete('public/service-images/' . $service->icon);
+        Storage::delete($service->image);
         $service->delete();
 
         if ($service) {

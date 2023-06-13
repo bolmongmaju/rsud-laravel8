@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     use HasFactory;
-    
+
     /**
      * guarded
      *
@@ -22,8 +22,8 @@ class Service extends Model
      * @param  mixed $image
      * @return void
      */
-    public function getImageAttribute($icon)
-    {
-        return asset('storage/service-images/' . $icon);
-    }
+    // public function getImageAttribute($icon)
+    // {
+    //     return asset('storage/service-images/' . $icon);
+    // }
 }

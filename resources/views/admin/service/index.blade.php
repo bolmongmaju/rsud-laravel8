@@ -38,9 +38,6 @@
                                 <tr>
                                     <th scope="col" style="text-align: center;width: 6%">NO.</th>
                                     <th scope="col">NAMA</th>
-                                    <th scope="col">KETERANGAN</th>
-                                    <th scope="col">ICON</th>
-                                    <th scope="col">LINK</th>
                                     <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                                 </tr>
                             </thead>
@@ -49,10 +46,7 @@
                                 <tr>
                                     <th scope="row" style="text-align: center">
                                         {{ ++$no + ($services->currentPage()-1) * $services->perPage() }}</th>
-                                    <td>{{ $service->nama }}</td>
-                                    <td>{{ $service->content }}</td>
-                                    <td class="text-center"><img src="/storage/service-images/{{ $service->icon }}" style="width: 20%"></td>
-                                    <td>{{ $service->link }}</td>
+                                    <td>{{ $service->name }}</td>
                                     <td class="text-center">
                                     @can('services.edit')
                                             <a href="{{ route('service.edit', $service->id) }}" class="btn btn-sm btn-primary">
@@ -70,7 +64,7 @@
                                 </tr>
                             @empty
                             <tr>
-                                <td colspan="6">Empty</td>
+                                <td colspan="3">Empty</td>
                             </tr>
                             @endforelse
                             </tbody>

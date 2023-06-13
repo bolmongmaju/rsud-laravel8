@@ -20,22 +20,10 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Nama:</strong>
-                                <input type="text" value="{{ old('nama') }}" name="nama" class="form-control"
-                                    placeholder="Nama">
-                                @error('nama')
-                                <div class="invalid-feedback" style="display: block">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Konten:</strong>
-                                    <textarea class="form-control content @error('keterangan') is-invalid @enderror" name="keterangan"
-                                placeholder="Masukkan Konten Layanan" rows="10">{!! old('keterangan') !!}</textarea>
-                                @error('keterangan')
+                                <strong>Nama layanan:</strong>
+                                <input type="text" value="{{ old('name') }}" name="name" class="form-control @error('name') is-invalid @enderror"
+                                    placeholder="Nama Layanan">
+                                @error('name')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
                                 </div>
@@ -45,27 +33,78 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Link:</strong>
-                                <input type="text" value="{{ old('link') }}" name="link" class="form-control" value="#"
-                                    placeholder="Link">
-                                @error('link')
+                                <strong>Persyaratan pelayanan:</strong>
+                                    <textarea class="form-control content @error('persyaratan') is-invalid @enderror" name="persyaratan" rows="10">{!! old('persyaratan') !!}</textarea>
+                                @error('persyaratan')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
                         </div>
+
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Icon:</strong>
-                                <input type="file" name="icon" class="form-control" placeholder="Icon">
-                                @error('icon')
+                                <strong>Prosedur:</strong>
+                                    <textarea class="form-control content @error('prosedur') is-invalid @enderror" name="prosedur" rows="10">{!! old('prosedur') !!}</textarea>
+                                @error('prosedur')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Waktu pelayanan:</strong>
+                                    <textarea class="form-control content @error('waktu') is-invalid @enderror" name="waktu" rows="10">{!! old('waktu') !!}</textarea>
+                                @error('waktu')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Biaya/tarif:</strong>
+                                <input type="text" value="{{ old('biaya') }}" name="biaya" class="form-control @error('biaya') is-invalid @enderror">
+
+                                @error('biaya')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Produk layanan:</strong>
+                                <input type="text" value="{{ old('produk_layanan') }}" name="produk_layanan" class="form-control @error('produk_layanan') is-invalid @enderror">
+
+                                @error('produk_layanan')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Image prosedur (opsional):</strong>
+                                <input type="file" name="image" class="form-control" placeholder="image">
+                                @error('image')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="col-xs-12 col-sm-12 col-md-12 text-left">
                             <button type="submit" class="btn btn-primary">Simpan</button>
                             <a class="btn btn-light" href="{{ route('service.index') }}">Batal</a>
