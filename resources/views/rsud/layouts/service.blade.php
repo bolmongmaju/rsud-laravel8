@@ -19,7 +19,6 @@
 
                 <div class="content">
                     {{-- <p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p> --}}
-                    <a href="{{ route('rawat-jalan') }}" class="read-more">Lihat <i class="icofont-simple-right ml-2"></i></a>
                 </div>
             </div>
         </div>
@@ -32,7 +31,6 @@
                 </div>
                 <div class="content">
                     {{-- <p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p> --}}
-                    <a href="{{ route('rawat-inap') }}" class="read-more">Lihat <i class="icofont-simple-right ml-2"></i></a>
                 </div>
             </div>
         </div>
@@ -45,7 +43,6 @@
                 </div>
                 <div class="content">
                     {{-- <p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p> --}}
-                    <a href="{{ route('gawat-darurat') }}" class="read-more">Lihat <i class="icofont-simple-right ml-2"></i></a>
                 </div>
             </div>
         </div>

@@ -111,11 +111,13 @@ class PageController extends Controller
 
     public function layanan()
     {
+        $layanan = Service::get();
         $contact = Contact::first();
         $profil = Profile::select('logo', 'favicon')->first();
         $sosmeds = Sosmed::get();
         $links = Link::latest()->get();
-        return view('rsud.detail.layanan', compact('sosmeds', 'links', 'profil', 'contact'));
+
+        return view('rsud.detail.layanan', compact('sosmeds', 'links', 'profil', 'contact', 'layanan'));
     }
 
     public function rawat_jalan()
