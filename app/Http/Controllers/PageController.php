@@ -55,6 +55,8 @@ class PageController extends Controller
         ));
     }
 
+    // controller for route profil
+
     public function sejarah()
     {
         $item = Profile::select('sejarah')->first();
@@ -85,16 +87,6 @@ class PageController extends Controller
         return view('rsud.detail.struktur', compact('item', 'contact', 'profil', 'sosmeds', 'links'));
     }
 
-    public function dasar_hukum()
-    {
-        $item = Profile::select('dasar_hukum')->first();
-        $contact = Contact::first();
-        $profil = Profile::select('logo', 'favicon')->first();
-        $sosmeds = Sosmed::get();
-        $links = Link::latest()->get();
-        return view('rsud.detail.dasar_hukum', compact('item', 'contact', 'profil', 'sosmeds', 'links'));
-    }
-
     public function maklumat_pelayanan()
     {
         $item = Profile::select('maklumat')->first();
@@ -115,13 +107,15 @@ class PageController extends Controller
         return view('rsud.detail.motto', compact('item', 'sosmeds', 'links', 'profil', 'contact'));
     }
 
-    public function prestasi()
+    // controller for route layanan
+
+    public function layanan()
     {
         $contact = Contact::first();
         $profil = Profile::select('logo', 'favicon')->first();
         $sosmeds = Sosmed::get();
         $links = Link::latest()->get();
-        return view('rsud.detail.prestasi', compact('sosmeds', 'links', 'profil', 'contact'));
+        return view('rsud.detail.layanan', compact('sosmeds', 'links', 'profil', 'contact'));
     }
 
     public function rawat_jalan()
@@ -193,6 +187,20 @@ class PageController extends Controller
         return view('rsud.detail.berita', compact('news', 'category', 'tags', 'news_new', 'contact', 'profil', 'sosmeds', 'links'));
     }
 
+    public function tag(Tag $tag)
+    {
+        $news = $tag->news()->latest()->paginate(5);
+        $category = Category::latest()->get();
+        $tags = Tag::latest()->get();
+        $news_new = News::take(3)->latest()->get();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+
+        return view('rsud.detail.berita', compact('news', 'category', 'tags', 'news_new', 'contact', 'profil', 'sosmeds', 'links'));
+    }
+
     public function kontak()
     {
         $kontak = Contact::latest()->first();
@@ -216,21 +224,5 @@ class PageController extends Controller
     //     $pathToFile = storage_path() . "/app/public/" . $entry->file;
     //     return response()->download($pathToFile);
     // }
-
-
-
-    public function tag(Tag $tag)
-    {
-        $news = $tag->news()->latest()->paginate(5);
-        $category = Category::latest()->get();
-        $tags = Tag::latest()->get();
-        $news_new = News::take(3)->latest()->get();
-        $contact = Contact::first();
-        $profil = Profile::select('logo', 'favicon')->first();
-        $sosmeds = Sosmed::get();
-        $links = Link::latest()->get();
-
-        return view('rsud.detail.berita', compact('news', 'category', 'tags', 'news_new', 'contact', 'profil', 'sosmeds', 'links'));
-    }
 
 }

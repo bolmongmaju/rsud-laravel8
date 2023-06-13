@@ -7,14 +7,14 @@
                     <li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>{{ $contact->alamat ?? null }} </li>
                 </ul>
             </div>
-            <div class="col-lg-6">
+            {{-- <div class="col-lg-6">
                 <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
                     <a href="tel:+23-345-67890">
                         <span>Telp/WA : </span>
                         <span class="h4">{{ $contact->no_telp ?? null }}</span>
                     </a>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
@@ -41,8 +41,6 @@
                         <li><a class="dropdown-item" href="{{ route('struktur') }}">Struktur Organisasi</a></li>
                         <li><a class="dropdown-item" href="{{ route('maklumat') }}">Maklumat Pelayanan</a></li>
                         <li><a class="dropdown-item" href="{{ route('motto') }}">Motto</a></li>
-                        <li><a class="dropdown-item" href="{{ route('dasarhukum') }}">Dasar Hukum</a></li>
-                        <li><a class="dropdown-item" href="{{ route('prestasi') }}">Prestasi</a></li>
 
                         {{-- <li class="dropdown dropdown-submenu dropright">
                             <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0301" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
@@ -55,18 +53,17 @@
                     </ul>
                 </li>
 
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Fasilitas Pelayanan <i class="icofont-thin-down"></i></a>
+                        aria-haspopup="true" aria-expanded="false">Layanan <i class="icofont-thin-down"></i></a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown03">
                         <li><a class="dropdown-item" href="{{ route('rj') }}">Pelayanan Rawat Jalan</a></li>
                         <li><a class="dropdown-item" href="{{ route('ri') }}">Pelayanan Rawat Inap</a></li>
                         <li><a class="dropdown-item" href="{{ route('gd') }}">Pelayanan Gawat Darurat</a></li>
-                        <li><a class="dropdown-item" href="#">Jam Pelayanan</a></li>
-                        <li><a class="dropdown-item" href="#">Pendaftaran Vaksin</a></li>
-                        <li><a class="dropdown-item" href="#">Pengajuan Surat Keterangan Medis</a></li>
                     </ul>
-                </li>
+                </li> --}}
+
+                <li class="nav-item"><a class="nav-link" href="{{ route('layanan') }}">Layanan</a></li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
@@ -79,26 +76,24 @@
                     </ul>
                 </li>
 
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Informasi <i class="icofont-thin-down"></i></a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown05">
                         <li><a class="dropdown-item" href="{{ route('berita') }}">Berita</a></li>
-                        <li><a class="dropdown-item" href="#">Artikel Kesehatan</a></li>
-                        <li><a class="dropdown-item" href="#">Tarif Pelayanan Kesehatan</a></li>
-                        <li><a class="dropdown-item" href="#">IKM</a></li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Media <i class="icofont-thin-down"></i></a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown06">
-                        <li><a class="dropdown-item" href="#">Foto</a></li>
-                        <li><a class="dropdown-item" href="#">Video</a></li>
-                        <li><a class="dropdown-item" href="#">Dokumen</a></li>
+                        <li><a class="dropdown-item" href="{{ route('gallery') }}">Gallery</a></li>
+                        <li><a class="dropdown-item" href="{{ route('dokumen') }}">Dokumen</a></li>
                     </ul>
                 </li>
+
+                <li class="nav-item"><a class="nav-link" href="{{ route('berita') }}">Berita</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="{{ route('kontak') }}">Kontak</a></li>
             </ul>

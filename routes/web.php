@@ -32,36 +32,28 @@ Route::prefix('profil')->group(function () {
     Route::get('/struktur-organisasi', [PageController::class, 'struktur_organisasi'])->name('struktur');
     Route::get('/maklumat-pelayanan', [PageController::class, 'maklumat_pelayanan'])->name('maklumat');
     Route::get('/motto', [PageController::class, 'motto'])->name('motto');
-    Route::get('/dasar-hukum', [PageController::class, 'dasar_hukum'])->name('dasarhukum');
-    Route::get('/prestasi', [PageController::class, 'prestasi'])->name('prestasi');
 });
 
 Route::prefix('layanan')->group(function () {
-    Route::get('/rawat-jalan', [PageController::class, 'rawat_jalan'])->name('rj');
-    Route::get('/rawat-inap', [PageController::class, 'rawat_inap'])->name('ri');
-    Route::get('/gawat-darurat', [PageController::class, 'gawat_darurat'])->name('gd');
-    Route::get('/pendaftaran-vaksin', [PageController::class, 'pendaftaran_vaksin'])->name('pv');
-    Route::get('/pengajuan-surat-keterangan-medis', [PageController::class, 'pengajuan_surat_keterangan_medis'])->name('pskm');
-    Route::get('/jam-pelayanan', [PageController::class, 'jam_pelayanan'])->name('jp');
+    Route::get('/', [PageController::class, 'layanan'])->name('layanan');
+    Route::get('/rawat-jalan', [PageController::class, 'rawat_jalan'])->name('rawat-jalan');
+    Route::get('/rawat-inap', [PageController::class, 'rawat_inap'])->name('rawat-inap');
+    Route::get('/gawat-darurat', [PageController::class, 'gawat_darurat'])->name('gawat-darurat');
 });
 
 Route::prefix('dokter')->group(function () {
     Route::get('/daftar-dokter', [PageController::class, 'daftar_dokter'])->name('dokter');
 });
 
-Route::prefix('informasi')->group(function () {
-    Route::get('/berita', [PageController::class, 'berita'])->name('berita');
-    Route::get('/berita/{news:slug}', [PageController::class, 'berita_detail'])->name('berita-detail');
-    Route::get('/berita/categories/{slug}', [PageController::class, 'kategori'])->name('cari-kategori');
-    Route::get('/berita/tag/{tag:slug}', [PageController::class, 'tag'])->name('cari-tag');
-    Route::get('/artikel-kesehatan', [PageController::class, 'artikel_kesehatan'])->name('artikel');
-});
-
 Route::prefix('media')->group(function () {
-    Route::get('/foto', [PageController::class, 'foto'])->name('foto');
-    Route::get('/video', [PageController::class, 'video'])->name('video');
+    Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery');
     Route::get('/dokumen', [PageController::class, 'dokumen'])->name('dokumen');
 });
+
+Route::get('/berita', [PageController::class, 'berita'])->name('berita');
+Route::get('/berita/{news:slug}', [PageController::class, 'berita_detail'])->name('berita-detail');
+Route::get('/berita/categories/{slug}', [PageController::class, 'kategori'])->name('cari-kategori');
+Route::get('/berita/tag/{tag:slug}', [PageController::class, 'tag'])->name('cari-tag');
 
 Route::get('/kontak', [PageController::class, 'kontak'])->name('kontak');
 

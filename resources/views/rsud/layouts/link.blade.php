@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-7">
             <div class="section-title text-center">
-                <h2>Aplikasi/Website yang terkait</h2>
+                <h2>Link Terkait</h2>
                 <div class="divider mx-auto my-4"></div>
             </div>
         </div>

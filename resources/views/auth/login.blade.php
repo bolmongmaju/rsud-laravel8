@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Login &mdash; Bolmongkab</title>
+    <title>Login &mdash; RSUD Datoe Binangkang Kabupaten Bolaang Mongondow</title>
 
     <link rel="shortcut icon" href="{{ asset('assets/img/bolmongkab.png') }}" type="image/x-icon">
 
@@ -30,7 +30,7 @@
                         <div class="login-brand">
                             {{-- <img src="{{ asset('assets/img/bolmongkab.png') }}" alt="logo" width="100"
                                 class="shadow-light rounded-circle" style="padding:10px;background: white;"> --}}
-                                <h4>RSUD BOLMONGKAB</h4>
+                                <p>RSUD BOLMONGKAB</p>
                         </div>
 
                         <div class="card card-primary">

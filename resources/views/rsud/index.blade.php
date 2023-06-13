@@ -19,8 +19,11 @@
 <section id="hero" style="background-color: rgba(255, 255, 255, 0.8);">
     @include('rsud.layouts.banner')
 </section>
-<section class="section about">
+{{-- <section class="section about">
 	@include('rsud.layouts.about')
+</section> --}}
+<section class="features mt-5">
+    @include('rsud.layouts.waktu_pelayanan')
 </section>
 <section class="section service gray-bg">
 	@include('rsud.layouts.service')

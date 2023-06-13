@@ -650,9 +650,9 @@ a:focus {
     text-align: center;
 }
 
-.features {
-    margin-top: -70px;
-}
+/* .features {
+    margin-top: px;
+} */
 
 .feature-item {
     flex-basis: 33.33%;
