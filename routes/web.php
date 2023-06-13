@@ -71,7 +71,7 @@ Route::get('/kontak', [PageController::class, 'kontak'])->name('kontak');
 // Route::get('/download', [App\Http\Controllers\PageController::class, 'download']);
 // Route::get('/getdownload/{downloads:id}', [App\Http\Controllers\PageController::class, 'getDownload'])->name('getdownload');
 
-Route::prefix('bolmongmaju')->group(function () {
+Route::prefix('bolmongmaju/rsud')->group(function () {
     Auth::routes([
         'register' => false,
         'reset'    => false,  // for resetting passwords
