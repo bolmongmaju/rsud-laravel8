@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
             <div class="section-title">
-                <h2>Frequently Asked Question</h2>
+                <h2>FAQ</h2>
                 <div class="divider mx-auto my-4"></div>
             </div>
         </div>

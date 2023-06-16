@@ -9,7 +9,7 @@
                     <span>Layanan 24 Jam</span>
                     <h4 class="mb-3">Online</h4>
                     <p class="mb-4">Melayani Dengan Senyum, Salam, Sambut, Sapa, Sentuh</p>
-                    <a href="#" class="btn btn-main btn-round-full">Tanya Dokter</a>
+                    <a href="#" class="btn btn-main btn-round-full">Pendaftaran Online</a>
                 </div>
 
                 <div class="feature-item mb-5 mb-lg-0">
