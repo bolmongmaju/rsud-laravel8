@@ -41,6 +41,8 @@ Route::prefix('layanan')->group(function () {
     Route::get('/gawat-darurat', [PageController::class, 'gawat_darurat'])->name('gawat-darurat');
 });
 
+Route::get('/jadwal-poliklinik', [PageController::class, 'jadwal_poliklinik'])->name('jadwal-poliklinik');
+
 Route::prefix('dokter')->group(function () {
     Route::get('/daftar-dokter', [PageController::class, 'daftar_dokter'])->name('dokter');
 });

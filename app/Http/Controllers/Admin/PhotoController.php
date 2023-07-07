@@ -44,7 +44,7 @@ class PhotoController extends Controller
     {
         $this->validate($request, [
             'caption' => 'required',
-            'image'   => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'image'   => 'required|image|mimes:jpeg,jpg,png',
         ]);
 
         //upload image

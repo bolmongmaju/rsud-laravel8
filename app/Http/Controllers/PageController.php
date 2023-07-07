@@ -147,6 +147,17 @@ class PageController extends Controller
         return view('rsud.detail.gawat_darurat', compact('sosmeds', 'links', 'profil', 'contact'));
     }
 
+    public function jadwal_poliklinik()
+    {
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+        $item = Photo::first();
+
+        return view('rsud.detail.jadwal_poliklinik', compact('item', 'sosmeds', 'links', 'profil', 'contact'));
+    }
+
     // controller for route media
 
     public function gallery()

@@ -65,7 +65,9 @@
 
                 <li class="nav-item"><a class="nav-link" href="{{ route('layanan') }}">Layanan</a></li>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item"><a class="nav-link" href="{{ route('jadwal-poliklinik') }}">Jadwal Poliklinik</a></li>
+
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Dokter <i class="icofont-thin-down"></i></a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown04">
@@ -74,7 +76,7 @@
                         <li><a class="dropdown-item" href="#">Klinik</a></li>
                         <li><a class="dropdown-item" href="#">Jadwal Poliklinik</a></li>
                     </ul>
-                </li>
+                </li> --}}
 
                 {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown"
