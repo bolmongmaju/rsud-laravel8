@@ -91,6 +91,11 @@
                         <span>Layanan</span></a></li>
                         @endcan
 
+                        {{-- @can('services.index') --}}
+                            <li class="#"><a class="nav-link" href="#"><i class="fas fa-calendar"></i>
+                        <span>Jadwal Poliklinik</span></a></li>
+                        {{-- @endcan --}}
+
                         @if(auth()->user()->can('photos.index') || auth()->user()->can('videos.index') || auth()->user()->can('downloads.index'))
                         <li class="menu-header">MEDIA</li>
                         @endif
